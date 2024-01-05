@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Piotr",
+      "surname": "Kowalski",
+      "email": "piotrK@wp.pl",
+      "password": "123",
+      "about": "Opis profilu Jana",
+      "picture": "images/jan_kowalski.png",
+      "birthDate": "1990-12-31",
+      "gender": "Men"
+    },
+    {
+      "id": 2,
+      "name": "Ewelina",
+      "surname": "Czajkowska",
+      "email": "ewelinaC@wp.pl",
+      "password": "456",
+      "about": "Opis profilu Eweliny",
+      "picture": "images/jan_kowalski.png",
+      "birthDate": "2002-12-31",
+      "gender": "Women"
+    }
+  ],
+
+"posts": [
+  {
+    "id": 1,
+    "title": "Wakacje",
+    "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "dateCreated": "2023-12-31 00:00:00"
+  },
+  {
+    "id": 2,
+    "title": "Ferie",
+    "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "dateCreated": "2023-12-31 00:00:00"
+  }
+],
+  "tags": [
+    {
+      "id": 1,
+      "name": "food"
+    },
+    {
+      "id": 2,
+      "name": "XD"
+    }
+  ]
+}
