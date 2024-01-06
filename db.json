@@ -50,6 +50,16 @@
       "postComments": [],
       "postReactions": [],
       "postPictures": []
+    },
+    {
+      "id": 3,
+      "title": "Test",
+      "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+      "dateCreated": "2023-12-33 00:00:00",
+      "id_user": 2,
+      "postComments": [],
+      "postReactions": [],
+      "postPictures": []
     }
   ],
   "posts_comments": [

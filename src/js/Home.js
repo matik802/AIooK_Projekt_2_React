@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import API from "./API";
 
 const Home = () => {
-    const [Posts, setPosts] = useState([]);
-    const [User, setUser] = useState([]);
+    const [posts, setPosts] = useState([]);
+    const [users, setUsers] = useState([]);
     const [search, setSearch] = useState('');
 
     const handleSearchChange = (e) => {
@@ -20,11 +20,16 @@ const Home = () => {
 
         try {
             const response = await API.get("/users");
-            setUser(response.data);
+            setUsers(response.data);
         } catch (error) {
             console.error('Error while fetching data', error);
         }
     }
+
+    const findUserName = (userId) => {
+        const user = users.find((user) => user.id === userId);
+        return user ? user.name : 'Unknown User';
+    };
 
     useEffect(() => {
         fetchData();
@@ -42,12 +47,11 @@ const Home = () => {
             </form>
             <h2>Popular:</h2>
             <div>
-                {Posts.map((post, index) => (
+                {posts.map((post, index) => (
                     <div key={post.id}>
                         <div>
                             <p>{post.title}</p>
-                            <p> User i jego imię maybe</p>
-                            {/*<p>{post.user.name}</p>*/}
+                            <p>{findUserName(post.id_user)}</p>
                             <button>jakies przejscie do innego użytkownika</button>
                         </div>
                         <div>
