@@ -7,7 +7,7 @@ import EditProfile from "./EditProfile";
 
 function App() {
   return (
-<Friends/>
+<Home/>
   );
 }
 
