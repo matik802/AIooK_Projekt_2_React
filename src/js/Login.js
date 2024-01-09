@@ -96,7 +96,7 @@ const Login = () => {
                                 onChange={(e) => setBirthDate(e.target.value)}
                                 required
                             />
-                            <div >
+                            <div>
                                 <label>Men</label>
                                 <input
                                     type="radio"

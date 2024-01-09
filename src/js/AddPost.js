@@ -48,15 +48,21 @@ function AddPost() {
         fetchData();
     }, []);
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
-        const data =
-            {
+
+        try {
+            const response = await API.post("/posts", {
                 title: post.title,
                 body: post.content,
                 dateCreated: new Date(),
-                tags: currentTags,
-            }
+                tags: currentTags.map(tag => tag.id),
+                id_user:2
+            });
+            fetchData();
+        } catch (error) {
+            console.error('Error while creating a new post', error);
+        }
     };
 
     const showPostFormHandler = () => {

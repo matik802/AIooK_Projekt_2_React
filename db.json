@@ -12,7 +12,10 @@
       "gender": "Men",
       "userRelationsFrom": [],
       "userRelationsTo": [],
-      "posts": [1, 2]
+      "posts": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
@@ -36,10 +39,19 @@
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
       "id_user": 1,
-      "postComments": [1],
-      "postReactions": [1],
-      "postPictures": [1],
-      "tags": [1, 2]
+      "postComments": [
+        1
+      ],
+      "postReactions": [
+        1
+      ],
+      "postPictures": [
+        1
+      ],
+      "tags": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
@@ -60,6 +72,14 @@
       "postComments": [],
       "postReactions": [],
       "postPictures": []
+    },
+    {
+      "title": "tytuł",
+      "body": "kontent",
+      "dateCreated": "2024-01-09T08:23:12.600Z",
+      "tags": [],
+      "id_user": 2,
+      "id": 4
     }
   ],
   "posts_comments": [
@@ -91,12 +111,17 @@
     {
       "id": 1,
       "name": "Food",
-      "posts": [1, 2]
+      "posts": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
       "name": "Sport",
-      "posts": [2]
+      "posts": [
+        2
+      ]
     }
   ],
   "users_relations": [
