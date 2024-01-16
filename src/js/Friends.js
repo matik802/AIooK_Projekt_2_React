@@ -44,18 +44,14 @@ const Friends = () => {
 
 
     return (
-        <div>
+        <div className="friends-container">
             <form>
-                <label>Search:</label>
                 <input
                     type="text"
                     onChange={handleSearchChange}
                     placeholder="Search"
                 />
             </form>
-            <p>Ja bym tu zrobiła widok zaproszenia i znajomi napewno</p>
-            <p>i npw jakis ładny sposob jeszcze wszystkich użytkowników  wrzucic których możemy dodać do znajomych</p>
-            <p>może 3 przewijane sekcje czy cos</p>
             <div>
                 <h2>Requests:</h2>
                 {Array.isArray(requests) && requests.length > 0 ? (
@@ -85,7 +81,8 @@ const Friends = () => {
                                 {`${friend.name} ${friend.surename}`}
                                 <button
                                     type="button"
-                                    onClick={() => handleRemoveFriend(friend.id)}>Remove
+                                    onClick={() => handleRemoveFriend(friend.id)}>
+                                    Remove
                                 </button>
                             </li>
                         ))}

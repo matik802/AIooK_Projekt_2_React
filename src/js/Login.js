@@ -42,26 +42,26 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="login-container">
             <h1>App Name/Logo</h1>
             <div>
                 {isLoggingIn ? (
                     <div>
-                        <form onSubmit={handleLoginSubmit}>
+                        <form onSubmit={handleLoginSubmit} className="login-form">
                             <h3>Sign In</h3>
-                            <input className="login-input"
-                                   type="email"
-                                   value={email}
-                                   placeholder="𝙴𝚖𝚊𝚒𝚕"
-                                   onChange={(e) => setEmail(e.target.value)}
-                                   required
+                            <input
+                                type="email"
+                                value={email}
+                                placeholder="Email"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
                             />
-                            <input className="login-input"
-                                   type="password"
-                                   value={password}
-                                   placeholder="Password"
-                                   onChange={(e) => setPassword(e.target.value)}
-                                   required
+                            <input
+                                type="password"
+                                value={password}
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
                             />
                             <span>{loginError}</span>
                             <button type="submit">Log In</button>
@@ -69,26 +69,29 @@ const Login = () => {
                     </div>
                 ) : (
                     <div>
-                        <form onSubmit={handleRegisterSubmit}>
+                        <form onSubmit={handleRegisterSubmit} className="login-form">
                             <h3>Sign Up</h3>
-                            <input className="login-input"
-                                   type="email"
-                                   value={email}
-                                   placeholder="𝙴𝚖𝚊𝚒𝚕"
-                                   onChange={(e) => setEmail(e.target.value)}
-                                   required/>
-                            <input className="login-input"
-                                   type="text"
-                                   value={name}
-                                   placeholder="Name"
-                                   onChange={(e) => setName(e.target.value)}
-                                   required/>
-                            <input className="login-input"
-                                   type="text"
-                                   value={surname}
-                                   placeholder="Surname"
-                                   onChange={(e) => setSurname(e.target.value)}
-                                   required/>
+                            <input
+                                type="email"
+                                value={email}
+                                placeholder="Email"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="text"
+                                value={name}
+                                placeholder="Name"
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="text"
+                                value={surname}
+                                placeholder="Surname"
+                                onChange={(e) => setSurname(e.target.value)}
+                                required
+                            />
                             <input
                                 type="date"
                                 value={birthDate}
@@ -96,45 +99,46 @@ const Login = () => {
                                 onChange={(e) => setBirthDate(e.target.value)}
                                 required
                             />
-                            <div>
+                            <div className="gender-options">
                                 <label>Men</label>
                                 <input
                                     type="radio"
                                     name="gender"
                                     value="male"
-                                    checked={gender === "Men"}
-                                    onChange={() => setGender("Men")}
+                                    checked={gender === "male"}
+                                    onChange={() => setGender("male")}
                                 />
                                 <label>Women</label>
                                 <input
                                     type="radio"
                                     name="gender"
                                     value="female"
-                                    checked={gender === "Women"}
-                                    onChange={() => setGender("Women")}
+                                    checked={gender === "female"}
+                                    onChange={() => setGender("female")}
                                 />
                             </div>
-                            <input className="login-input"
-                                   type="password"
-                                   value={password}
-                                   placeholder="Password"
-                                   onChange={(e) => setPassword(e.target.value)}
-                                   required/>
-                            <input className="login-input"
-                                   type="password"
-                                   value={confirmPassword}
-                                   placeholder="Confirm Password"
-                                   onChange={(e) => setConfirmPassword(e.target.value)}
-                                   required/>
+                            <input
+                                type="password"
+                                value={password}
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="password"
+                                value={confirmPassword}
+                                placeholder="Confirm Password"
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
+                            />
                             <span>{registrationError}</span>
                             <button type="submit">Sign Up</button>
                         </form>
                     </div>
-
                 )}
                 <p>
-                    {isLoggingIn ? 'Dont have an account? ' : 'Already have an account?'}
-                    <button onClick={handleSwitchForm}>
+                    {isLoggingIn ? 'Don\'t have an account? ' : 'Already have an account?'}
+                    <button onClick={handleSwitchForm} className="login-switch-button">
                         {isLoggingIn ? 'Sign Up' : 'Sign In'}
                     </button>
                 </p>
@@ -142,4 +146,5 @@ const Login = () => {
         </div>
     );
 }
+
 export default Login;

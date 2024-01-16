@@ -95,13 +95,7 @@ function AddPost() {
     };
 
     return (
-        <div>
-            <h1>Z tego to trzeba zrobić jakies okno które bedzie mozna otwierac na roznych widokach</h1>
-            {!showPostForm ? (
-                <div>
-                    <button onClick={showPostFormHandler}>Add Post</button>
-                </div>
-            ) : (
+        <div className="add-post-container">
                 <div>
                     <h3>Add Post</h3>
                     <form onSubmit={handleFormSubmit}>
@@ -155,7 +149,6 @@ function AddPost() {
                         <button type="submit"> Add Post</button>
                     </form>
                 </div>
-            )}
         </div>
     );
 }

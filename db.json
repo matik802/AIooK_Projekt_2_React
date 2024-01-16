@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Piotr",
       "surname": "Kowalski",
       "email": "piotrK@wp.pl",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Ewelina",
       "surname": "Czajkowska",
       "email": "ewelinaC@wp.pl",
@@ -34,7 +34,7 @@
   ],
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Wakacje",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
@@ -48,43 +48,50 @@
       "postPictures": [
         1
       ],
-      "tags": [
-        1,
-        2
-      ]
+      "tags": [1]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Ferie",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
       "id_user": 1,
       "postComments": [],
       "postReactions": [],
-      "postPictures": []
+      "postPictures": [],
+      "tags": []
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Test",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-33 00:00:00",
       "id_user": 2,
       "postComments": [],
       "postReactions": [],
-      "postPictures": []
+      "postPictures": [],
+      "tags": []
     },
     {
       "title": "tytuł",
       "body": "kontent",
       "dateCreated": "2024-01-09T08:23:12.600Z",
-      "tags": [],
       "id_user": 2,
-      "id": 4
+      "id": "4",
+      "tags": [1]
+    },
+    {
+      "id": "efde",
+      "title": "xc",
+      "body": "zxc",
+      "dateCreated": "2024-01-15T14:02:51.635Z",
+      "id_user": 2,
+      "tags": [1,2]
     }
   ],
   "posts_comments": [
     {
-      "id": 1,
+      "id": "1",
       "content": "Comment on the sample post",
       "date_created": "2022-01-07T10:00:00Z",
       "id_post": 1,
@@ -93,14 +100,14 @@
   ],
   "posts_pictures": [
     {
-      "id": 1,
+      "id": "1",
       "picture": null,
       "id_post": 1
     }
   ],
   "posts_reactions": [
     {
-      "id": 1,
+      "id": "1",
       "type": "Like",
       "date_created": "2022-01-08T08:30:00Z",
       "id_post": 1,
@@ -109,7 +116,7 @@
   ],
   "tags": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Food",
       "posts": [
         1,
@@ -117,7 +124,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Sport",
       "posts": [
         2
@@ -126,14 +133,14 @@
   ],
   "users_relations": [
     {
-      "id": 1,
+      "id": "1",
       "status": "Friends",
       "date_created": "2022-01-10T14:30:00Z",
       "id_user_from": 1,
       "id_user_to": 2
     },
     {
-      "id": 2,
+      "id": "2",
       "status": "Friends",
       "date_created": "2022-01-11T08:45:00Z",
       "id_user_from": 2,

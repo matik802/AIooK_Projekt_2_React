@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react';
+// Home.jsx
+
+import React, { useEffect, useState } from 'react';
 import API from "./API";
 
 const Home = () => {
@@ -36,46 +38,44 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
-            <form>
-                <label>Search:</label>
-                <input
-                    type="text"
-                    onChange={handleSearchChange}
-                    placeholder="Search"
-                />
-            </form>
-            <h2>Popular:</h2>
+        <div className="home-container">
+            <div className="home-search-container">
+                <form>
+                    <input
+                        type="text"
+                        onChange={handleSearchChange}
+                        placeholder="Search"
+                        className="home-search-input"
+                    />
+                </form>
+            </div>
+            <h2>Popular posts:</h2>
             <div>
                 {posts.map((post, index) => (
-                    <div key={post.id}>
+                    <div key={post.id} className="home-post">
                         <div>
-                            <p>{post.title}</p>
+                            <p className="home-post-title">{post.title}</p>
                             <p>{findUserName(post.id_user)}</p>
                             <button>jakies przejscie do innego użytkownika</button>
                         </div>
-                        <div>
+                        <div className="home-post-body">
                             <p>{post.body}</p>
-                            <p>Tutaj wlecą tagi trzeba ładnie je wyświetlić</p>
-                            <ul>
+                            <ul className="home-post-tags">
                                 {post.tags?.map((tag, index) => (
                                     <li key={index}> #{tag.name}</li>
                                 ))}
                             </ul>
                         </div>
-                        <div>
+                        <div className="home-post-buttons">
                             <div>
-                                <button
-                                    type="button">
+                                <button type="button" className="home-like-button">
                                     Like/Dislike
                                 </button>
-                                <button
-                                    type="button">
+                                <button type="button" className="home-comment-button">
                                     Comment
                                 </button>
-                                <button
-                                    type="button"
-                                >Save? Maybe
+                                <button type="button" className="home-save-button">
+                                    Save? Maybe
                                 </button>
                             </div>
                         </div>

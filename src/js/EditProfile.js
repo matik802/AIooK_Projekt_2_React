@@ -87,7 +87,7 @@ const EditProfile = () => {
     };
 
     return (
-        <div>
+        <div className="edit-profile-container">
             <h1>User Profile</h1>
             <button onClick={startEditing} disabled={isEditing}>
                 Edit Profile
