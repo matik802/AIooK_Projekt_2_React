@@ -48,7 +48,9 @@
       "postPictures": [
         1
       ],
-      "tags": [1]
+      "tags": [
+        1
+      ]
     },
     {
       "id": "2",
@@ -78,7 +80,9 @@
       "dateCreated": "2024-01-09T08:23:12.600Z",
       "id_user": 2,
       "id": "4",
-      "tags": [1]
+      "tags": [
+        1
+      ]
     },
     {
       "id": "efde",
@@ -86,7 +90,50 @@
       "body": "zxc",
       "dateCreated": "2024-01-15T14:02:51.635Z",
       "id_user": 2,
-      "tags": [1,2]
+      "tags": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "0cb2",
+      "title": "sass",
+      "body": "asd",
+      "dateCreated": "2024-01-16T21:58:15.440Z",
+      "tags": [],
+      "id_user": 2
+    },
+    {
+      "id": "9076",
+      "title": "sass",
+      "body": "asd",
+      "dateCreated": "2024-01-16T21:58:16.347Z",
+      "tags": [],
+      "id_user": 2
+    },
+    {
+      "id": "6808",
+      "title": "sass",
+      "body": "asd",
+      "dateCreated": "2024-01-16T21:58:17.169Z",
+      "tags": [],
+      "id_user": 2
+    },
+    {
+      "id": "94d5",
+      "title": "sass",
+      "body": "asd",
+      "dateCreated": "2024-01-16T21:58:17.356Z",
+      "tags": [],
+      "id_user": 2
+    },
+    {
+      "id": "aaae",
+      "title": "sass",
+      "body": "asd",
+      "dateCreated": "2024-01-16T21:58:17.536Z",
+      "tags": [],
+      "id_user": 2
     }
   ],
   "posts_comments": [
