@@ -29,13 +29,22 @@ const Home = () => {
     }
 
     const findUserName = (userId) => {
-        const user = users.find((user) => user.id === userId);
-        return user ? user.name : 'Unknown User';
+        const user = users.find((user) => user.id == userId);
+        return user ? user.name + " " + user.surname : 'Unknown User';
     };
 
     useEffect(() => {
         fetchData();
     }, []);
+
+    const filteredPosts = posts.filter(post => {
+        const lowerSearch = search.toLowerCase();
+        return (
+            post.title.toLowerCase().includes(lowerSearch) ||
+            post.body.toLowerCase().includes(lowerSearch) ||
+            findUserName(post.id_user).toLowerCase().includes(lowerSearch)
+        );
+    });
 
     return (
         <div className="home-container">
@@ -51,7 +60,7 @@ const Home = () => {
             </div>
             <h2>Popular posts:</h2>
             <div>
-                {posts.map((post, index) => (
+                {filteredPosts.map((post, index) => (
                     <div key={post.id} className="home-post">
                         <div>
                             <p className="home-post-title">{post.title}</p>

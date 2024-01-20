@@ -37,7 +37,6 @@ const Login = () => {
 
             if (matchingUser) {
                 console.log("Użytkownik o podanym e-mailu i haśle istnieje:", matchingUser);
-                await API.post("/logged_users", matchingUser);
                 navigate('/')
             } else {
                 console.log("Użytkownik o podanym e-mailu i haśle nie istnieje.");

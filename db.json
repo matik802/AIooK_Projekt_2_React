@@ -41,17 +41,6 @@
       "gender": "male"
     }
   ],
-  "logged_users": [
-    {
-      "id": "acc4",
-      "email": "p@wp.pl",
-      "name": "adam",
-      "surname": "kowalski",
-      "password": "aa",
-      "birthdayDate": "2024-02-01",
-      "gender": "male"
-    }
-  ],
   "posts": [
     {
       "id": "1",
