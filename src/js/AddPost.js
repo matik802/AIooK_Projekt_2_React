@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import API from "./API";
+import { useNavigate } from 'react-router-dom';
 
 function AddPost() {
+    const navigate = useNavigate();
     const [showPostForm, setShowPostForm] = useState(false);
     const [currentTags, setCurrentTags] = useState([]);
     const [rawTags, setRawTags] = useState([]);
+    const [fileName, setFileName] = useState([])
     const [post, setPost] = useState({
         title: '',
         content: '',
@@ -56,13 +59,24 @@ function AddPost() {
                 title: post.title,
                 body: post.content,
                 dateCreated: new Date(),
+                id_user: 2,
+                postComments: '',
+                postLikeReactions: 0,
+                postDislikeReactions: 0,
+                postPictures: fileName,
                 tags: currentTags.map(tag => tag.id),
-                id_user:2
+
             });
+            fetchData();
+            const responseImage = await API.post("/posts_pictures", {
+                picture: fileName,
+                id_post: post.id
+            })
             fetchData();
         } catch (error) {
             console.error('Error while creating a new post', error);
         }
+        navigate("/")
     };
 
     const showPostFormHandler = () => {
@@ -81,6 +95,7 @@ function AddPost() {
 
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
+        setFileName(file.name)
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -91,8 +106,10 @@ function AddPost() {
                 }));
             };
             reader.readAsDataURL(file);
+            
         }
     };
+
 
     return (
         <div className="add-post-container">

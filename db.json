@@ -29,16 +29,9 @@
       "gender": "Women",
       "userRelationsFrom": [],
       "userRelationsTo": [],
-      "posts": []
-    },
-    {
-      "id": "acc4",
-      "email": "p@wp.pl",
-      "name": "adam",
-      "surname": "kowalski",
-      "password": "aa",
-      "birthdayDate": "2024-02-01",
-      "gender": "male"
+      "posts": [
+        3
+      ]
     }
   ],
   "posts": [
@@ -51,9 +44,8 @@
       "postComments": [
         1
       ],
-      "postReactions": [
-        1
-      ],
+      "postLikeReactions": 7,
+      "postDislikeReactions": 11,
       "postPictures": [
         1
       ],
@@ -68,9 +60,13 @@
       "dateCreated": "2023-12-31 00:00:00",
       "id_user": 1,
       "postComments": [],
-      "postReactions": [],
+      "postLikeReactions": 1,
+      "postDislikeReactions": 1,
       "postPictures": [],
-      "tags": []
+      "tags": [
+        1,
+        2
+      ]
     },
     {
       "id": "3",
@@ -79,110 +75,175 @@
       "dateCreated": "2023-12-33 00:00:00",
       "id_user": 2,
       "postComments": [],
-      "postReactions": [],
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
       "postPictures": [],
       "tags": []
     },
     {
-      "title": "tytuł",
-      "body": "kontent",
-      "dateCreated": "2024-01-09T08:23:12.600Z",
+      "id": "d82c",
+      "title": "studia",
+      "body": "Projekty do oddania",
+      "dateCreated": "2024-01-20T17:42:32.572Z",
       "id_user": 2,
-      "id": "4",
-      "tags": [
-        1
-      ]
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": 0,
+      "tags": []
     },
     {
-      "id": "efde",
-      "title": "xc",
-      "body": "zxc",
-      "dateCreated": "2024-01-15T14:02:51.635Z",
+      "id": "5eca",
+      "title": "aaa",
+      "body": "aaa",
+      "dateCreated": "2024-01-20T17:44:44.700Z",
       "id_user": 2,
-      "tags": [
-        1,
-        2
-      ]
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": 0,
+      "tags": []
     },
     {
-      "id": "0cb2",
-      "title": "sass",
-      "body": "asd",
-      "dateCreated": "2024-01-16T21:58:15.440Z",
-      "tags": [],
-      "id_user": 2
+      "id": "1597",
+      "title": "asd1",
+      "body": "asd1",
+      "dateCreated": "2024-01-20T18:05:02.226Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": 0,
+      "tags": []
     },
     {
-      "id": "9076",
-      "title": "sass",
-      "body": "asd",
-      "dateCreated": "2024-01-16T21:58:16.347Z",
-      "tags": [],
-      "id_user": 2
+      "id": "b059",
+      "title": "asd1",
+      "body": "asd1",
+      "dateCreated": "2024-01-20T18:05:39.197Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": 0,
+      "tags": []
     },
     {
-      "id": "6808",
-      "title": "sass",
-      "body": "asd",
-      "dateCreated": "2024-01-16T21:58:17.169Z",
-      "tags": [],
-      "id_user": 2
-    },
-    {
-      "id": "94d5",
-      "title": "sass",
-      "body": "asd",
-      "dateCreated": "2024-01-16T21:58:17.356Z",
-      "tags": [],
-      "id_user": 2
-    },
-    {
-      "id": "aaae",
-      "title": "sass",
-      "body": "asd",
-      "dateCreated": "2024-01-16T21:58:17.536Z",
-      "tags": [],
-      "id_user": 2
-    },
-    {
-      "id": "54bf",
+      "id": "5bed",
       "title": "aa",
-      "body": "aaaa",
-      "dateCreated": "2024-01-19T13:24:22.898Z",
-      "tags": [],
-      "id_user": 2
+      "body": "aa",
+      "dateCreated": "2024-01-20T18:07:05.002Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": 0,
+      "tags": []
     },
     {
-      "id": "b912",
+      "id": "ebe6",
       "title": "aa",
-      "body": "aaaa",
-      "dateCreated": "2024-01-19T13:24:24.221Z",
-      "tags": [],
-      "id_user": 2
+      "body": "aa",
+      "dateCreated": "2024-01-20T18:08:40.101Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": 0,
+      "tags": []
     },
     {
-      "id": "f44a",
+      "id": "aa51",
       "title": "aa",
-      "body": "aaaa",
-      "dateCreated": "2024-01-19T13:24:24.374Z",
-      "tags": [],
-      "id_user": 2
+      "body": "aaa",
+      "dateCreated": "2024-01-20T18:10:31.000Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "tags": []
     },
     {
-      "id": "20b3",
+      "id": "c73e",
+      "title": "a",
+      "body": "a",
+      "dateCreated": "2024-01-20T18:14:09.985Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "tags": []
+    },
+    {
+      "id": "b01b",
       "title": "aa",
-      "body": "aaaa",
-      "dateCreated": "2024-01-19T13:24:24.514Z",
-      "tags": [],
-      "id_user": 2
+      "body": "aa",
+      "dateCreated": "2024-01-20T18:15:43.529Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "tags": []
     },
     {
-      "id": "9d55",
-      "title": "ads",
-      "body": "das",
-      "dateCreated": "2024-01-19T13:24:51.941Z",
-      "tags": [],
-      "id_user": 2
+      "id": "5dcb",
+      "title": "aa",
+      "body": "aa",
+      "dateCreated": "2024-01-20T18:20:32.429Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "",
+      "tags": []
+    },
+    {
+      "id": "bfe7",
+      "title": "aa",
+      "body": "aaa",
+      "dateCreated": "2024-01-20T18:22:55.734Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "avatar.jpg",
+      "tags": []
+    },
+    {
+      "id": "bfac",
+      "title": "aaa",
+      "body": "aaaaa",
+      "dateCreated": "2024-01-20T18:29:17.299Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "avatar.jpg",
+      "tags": []
+    },
+    {
+      "id": "2a3b",
+      "title": "aaa",
+      "body": "aaaaa",
+      "dateCreated": "2024-01-20T18:29:37.439Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "avatar.jpg",
+      "tags": []
+    },
+    {
+      "id": "6df0",
+      "title": "asdsa",
+      "body": "asdasd",
+      "dateCreated": "2024-01-20T18:30:08.296Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "avatar.jpg",
+      "tags": []
     }
   ],
   "posts_comments": [
@@ -199,6 +260,14 @@
       "id": "1",
       "picture": null,
       "id_post": 1
+    },
+    {
+      "id": "2dd0",
+      "picture": "avatar.jpg"
+    },
+    {
+      "id": "1e48",
+      "picture": "avatar.jpg"
     }
   ],
   "posts_reactions": [
