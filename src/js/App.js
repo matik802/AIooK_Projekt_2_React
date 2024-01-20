@@ -6,8 +6,10 @@ import AddPost from "./AddPost";
 import EditProfile from "./EditProfile";
 import Navbar from  "./Navbar"
 import {Route, Routes} from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+
 
   return (
       <>

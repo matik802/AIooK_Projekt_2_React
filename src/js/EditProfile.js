@@ -15,9 +15,10 @@ const EditProfile = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
+
     const fetchData = async () => {
         try {
-            const response = await API.get("/users/1");
+            const response = await API.get("/logged_users");
             setUserData(response.data);
         } catch (error) {
             console.error('Error while fetching data', error);
@@ -34,7 +35,7 @@ const EditProfile = () => {
         setLastName(data.surname);
         setAbout(data.about);
         setSelectedImage(data.picture);
-        setBirthdate(data.birthDate);
+        setBirthdate(data.birthDate);   
         setGender(data.gender);
     };
 
