@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import API from "./API";
+import bcrypt from "bcryptjs";
 
 const EditProfile = () => {
     const [about, setAbout] = useState('');
@@ -15,10 +16,11 @@ const EditProfile = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [userId, setUserId] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
 
     const fetchData = async () => {
         try {
-            const response = await API.get("/users/"+userId);
+            const response = await API.get("/users/" + userId);
             setUserData(response.data);
             console.log(response.data);
         } catch (error) {
@@ -39,6 +41,7 @@ const EditProfile = () => {
         setSelectedImage(data.picture);
         setBirthdate(data.birthdayDate);
         setGender(data.gender);
+        setCurrentPassword(data.password);
     };
 
     const handleSave = async () => {
@@ -67,11 +70,19 @@ const EditProfile = () => {
         try {
             if (newPassword !== confirmPassword) {
                 setErrorMessage("Passwords do not match");
+                return;
             }
+            const isCurrentPasswordValid = await bcrypt.compare(password, currentPassword);
+
+            if(!isCurrentPasswordValid){
+                setErrorMessage("Current password is incorrect");
+                return;
+            }
+
             const requestBody = {
-                password: password,
-                newPassword: confirmPassword
+                password: await bcrypt.hash(newPassword, 10),
             };
+
             const response = await API.patch("/users/" + userId, requestBody);
             if (response.status === 200) {
                 setIsEditing(false);
@@ -144,7 +155,7 @@ const EditProfile = () => {
             <label>Profile picture:</label>
             <label htmlFor="upload-image" className="upload-image-label">
                 {selectedImage ? (
-                    <img src={URL.createObjectURL(selectedImage)} alt="Zdjęcie profilowe" />
+                    <img src={URL.createObjectURL(selectedImage)} alt="Zdjęcie profilowe"/>
                 ) : (
                     <div className="upload-image-container">
                         Kliknij, aby wybrać zdjęcie
@@ -186,14 +197,9 @@ const EditProfile = () => {
                 />
                 <span>{errorMessage}</span>
             </form>
-            {/*TODO potrzebny oddzielny przycisk do zmiany hasła, żeby oddzielnie przesyłać dane*/
-            }
-            {/*<button disabled={!isEditing} onClick={handlePasswordChange}>*/
-            }
-            {/*    Zapisz nowe hasło*/
-            }
-            {/*</button>*/
-            }
+            <button disabled={!isEditing} onClick={handlePasswordChange}>
+                Zmień hasło
+            </button>
             <button disabled={!isEditing} onClick={handleSave}>
                 Save
             </button>
