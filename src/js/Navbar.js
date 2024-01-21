@@ -1,6 +1,13 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export default function Navbar(){
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        sessionStorage.removeItem('email');
+        navigate("/login");
+    };
+
     return (
         <div className="navbar">
             <div className="navbar-left">
@@ -11,6 +18,7 @@ export default function Navbar(){
                 <Link to="/friends">Friends</Link>
                 <Link to="/editProfile">Edit profile</Link>
                 <Link to="/addPost">Add post</Link>
+                <Link to="/login" onClick={handleLogout}>Log Out</Link>
             </div>
         </div>
     );

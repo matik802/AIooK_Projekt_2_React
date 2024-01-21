@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Piotr",
       "surname": "Kowalski",
       "email": "piotrK@wp.pl",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Ewelina",
       "surname": "Czajkowska",
       "email": "ewelinaC@wp.pl",
@@ -32,11 +32,65 @@
       "posts": [
         3
       ]
+    },
+    {
+      "id": 3,
+      "name": "Karol",
+      "surname": "Karolak",
+      "email": "nowy@wp.pl",
+      "password": "haslo",
+      "birthdayDate": "2024-01-31",
+      "gender": "male"
+    },
+    {
+      "id": 4,
+      "name": "Karol",
+      "surname": "Karolak",
+      "email": "nowy22@wp.pl",
+      "password": "test",
+      "birthdayDate": "2024-01-31",
+      "gender": "male"
+    },
+    {
+      "id": 5,
+      "name": "Ala",
+      "surname": "Kot",
+      "email": "test123@wp.pl",
+      "password": "proste",
+      "birthdayDate": "2024-01-17",
+      "gender": "female"
+    },
+    {
+      "id": 6,
+      "name": "Alicja",
+      "surname": "Kot",
+      "email": "ala@wp.pl",
+      "password": "ala",
+      "birthdayDate": "2024-01-26",
+      "gender": "female"
+    },
+    {
+      "id": 7,
+      "name": "Ela",
+      "surname": "Polik",
+      "email": "123@123.pl",
+      "password": "123",
+      "birthdayDate": "2024-01-11",
+      "gender": "female"
+    },
+    {
+      "id": "560e",
+      "name": "Izabela",
+      "surname": "Klis",
+      "email": "iza@wp.pl",
+      "password": "password",
+      "birthdayDate": "2024-01-20",
+      "gender": "female"
     }
   ],
   "posts": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Wakacje",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
@@ -54,7 +108,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Ferie",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
@@ -69,7 +123,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Test",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-33 00:00:00",
@@ -81,7 +135,7 @@
       "tags": []
     },
     {
-      "id": "d82c",
+      "id": 4,
       "title": "studia",
       "body": "Projekty do oddania",
       "dateCreated": "2024-01-20T17:42:32.572Z",
@@ -93,7 +147,7 @@
       "tags": []
     },
     {
-      "id": "5eca",
+      "id": 5,
       "title": "aaa",
       "body": "aaa",
       "dateCreated": "2024-01-20T17:44:44.700Z",
@@ -105,7 +159,7 @@
       "tags": []
     },
     {
-      "id": "1597",
+      "id": 6,
       "title": "asd1",
       "body": "asd1",
       "dateCreated": "2024-01-20T18:05:02.226Z",
@@ -117,7 +171,7 @@
       "tags": []
     },
     {
-      "id": "b059",
+      "id": 7,
       "title": "asd1",
       "body": "asd1",
       "dateCreated": "2024-01-20T18:05:39.197Z",
@@ -129,7 +183,7 @@
       "tags": []
     },
     {
-      "id": "5bed",
+      "id": 8,
       "title": "aa",
       "body": "aa",
       "dateCreated": "2024-01-20T18:07:05.002Z",
@@ -141,7 +195,7 @@
       "tags": []
     },
     {
-      "id": "ebe6",
+      "id": 9,
       "title": "aa",
       "body": "aa",
       "dateCreated": "2024-01-20T18:08:40.101Z",
@@ -153,7 +207,7 @@
       "tags": []
     },
     {
-      "id": "aa51",
+      "id": 10,
       "title": "aa",
       "body": "aaa",
       "dateCreated": "2024-01-20T18:10:31.000Z",
@@ -164,7 +218,7 @@
       "tags": []
     },
     {
-      "id": "c73e",
+      "id": 11,
       "title": "a",
       "body": "a",
       "dateCreated": "2024-01-20T18:14:09.985Z",
@@ -175,7 +229,7 @@
       "tags": []
     },
     {
-      "id": "b01b",
+      "id": 12,
       "title": "aa",
       "body": "aa",
       "dateCreated": "2024-01-20T18:15:43.529Z",
@@ -186,7 +240,7 @@
       "tags": []
     },
     {
-      "id": "5dcb",
+      "id": 13,
       "title": "aa",
       "body": "aa",
       "dateCreated": "2024-01-20T18:20:32.429Z",
@@ -198,7 +252,7 @@
       "tags": []
     },
     {
-      "id": "bfe7",
+      "id": 14,
       "title": "aa",
       "body": "aaa",
       "dateCreated": "2024-01-20T18:22:55.734Z",
@@ -210,7 +264,7 @@
       "tags": []
     },
     {
-      "id": "bfac",
+      "id": 15,
       "title": "aaa",
       "body": "aaaaa",
       "dateCreated": "2024-01-20T18:29:17.299Z",
@@ -222,7 +276,7 @@
       "tags": []
     },
     {
-      "id": "2a3b",
+      "id": 16,
       "title": "aaa",
       "body": "aaaaa",
       "dateCreated": "2024-01-20T18:29:37.439Z",
@@ -234,7 +288,7 @@
       "tags": []
     },
     {
-      "id": "6df0",
+      "id": 17,
       "title": "asdsa",
       "body": "asdasd",
       "dateCreated": "2024-01-20T18:30:08.296Z",
@@ -248,7 +302,7 @@
   ],
   "posts_comments": [
     {
-      "id": "1",
+      "id": 1,
       "content": "Comment on the sample post",
       "date_created": "2022-01-07T10:00:00Z",
       "id_post": 1,
@@ -257,22 +311,22 @@
   ],
   "posts_pictures": [
     {
-      "id": "1",
+      "id": 1,
       "picture": null,
       "id_post": 1
     },
     {
-      "id": "2dd0",
+      "id": 2,
       "picture": "avatar.jpg"
     },
     {
-      "id": "1e48",
+      "id": 3,
       "picture": "avatar.jpg"
     }
   ],
   "posts_reactions": [
     {
-      "id": "1",
+      "id": 1,
       "type": "Like",
       "date_created": "2022-01-08T08:30:00Z",
       "id_post": 1,
@@ -281,7 +335,7 @@
   ],
   "tags": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Food",
       "posts": [
         1,
@@ -289,7 +343,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Sport",
       "posts": [
         2
@@ -298,14 +352,14 @@
   ],
   "users_relations": [
     {
-      "id": "1",
+      "id": 1,
       "status": "Friends",
       "date_created": "2022-01-10T14:30:00Z",
       "id_user_from": 1,
       "id_user_to": 2
     },
     {
-      "id": "2",
+      "id": 2,
       "status": "Friends",
       "date_created": "2022-01-11T08:45:00Z",
       "id_user_from": 2,

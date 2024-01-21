@@ -1,13 +1,21 @@
-// Home.jsx
-
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import API from "./API";
+import {useNavigate} from 'react-router-dom';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
     const [users, setUsers] = useState([]);
     const [tags, setTags] = useState([]);
     const [search, setSearch] = useState('');
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        let email = sessionStorage.getItem('email');
+        if (email === " " || email == null) {
+            navigate("/login");
+        }
+    }, []);
 
     const handleSearchChange = (e) => {
         setSearch(e.target.value);
@@ -49,18 +57,18 @@ const Home = () => {
             // Pobierz aktualny stan posta
             const response = await API.get(`/posts/${postId}`);
             const currentPost = response.data;
-    
-            if(type == "like") {
+
+            if (type == "like") {
                 currentPost.postLikeReactions++;
             } else {
                 currentPost.postDislikeReactions++;
             }
-    
+
             // Wyślij zaktualizowany stan z powrotem do serwera
             const updateResponse = await API.put(`/posts/${postId}`, currentPost);
             const r = await API.get("/posts");
             setPosts(r.data);
-    
+
             // Przetwarzaj odpowiedź, aktualizuj stany lub inaczej obsługuj dane z serwera
             console.log('Reaction response:', updateResponse.data);
         } catch (error) {
@@ -68,7 +76,7 @@ const Home = () => {
         }
     };
     const handleComment = async (postId) => {
-        
+
     };
 
     const filteredPosts = posts.filter(post => {
@@ -94,10 +102,10 @@ const Home = () => {
             </div>
             <h2>Popular posts:</h2>
             <div>
-            
+
                 {filteredPosts.map((post, index) => (
                     <div key={post.id} className="home-post">
-                        <img src={ require(`../images/avatar.jpg`/*${post.postPictures}*/) } alt="logo" height={100}/>
+                        <img src={require(`../images/avatar.jpg`/*${post.postPictures}*/)} alt="logo" height={100}/>
                         <div>
                             <p className="home-post-title">{post.title}</p>
                             <p>{findUserName(post.id_user)}</p>
@@ -117,7 +125,8 @@ const Home = () => {
                                 <button onClick={() => handleReaction(post.id, "like")} className="home-like-button">
                                     Like ({post.postLikeReactions})
                                 </button>
-                                <button onClick={() => handleReaction(post.id, "dislike")} className="home-dislike-button">
+                                <button onClick={() => handleReaction(post.id, "dislike")}
+                                        className="home-dislike-button">
                                     Dislike ({post.postDislikeReactions})
                                 </button>
                                 <button onClick={() => handleComment(post.id)} className="home-comment-button">

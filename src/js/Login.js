@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import API from "./API";
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import App from './App';
+import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
     const [isLoggingIn, setIsLoggingIn] = useState(true);
@@ -17,36 +15,31 @@ const Login = () => {
     const [gender, setGender] = useState("");
     const navigate = useNavigate();
 
+    const handleLoginSubmit = (e) => {
+        e.preventDefault();
+
+        API.get("/users/")
+            .then((result) => {
+                result.data.map((user) => {
+                    if (user.email === email) {
+                        if (user.password === password) {
+                            sessionStorage.setItem('email', email);
+                            navigate('/');
+                            console.log("przeszło");
+                        } else {
+                            console.log("Nie udane logowanie");
+                        }
+                    }
+                });
+            })
+            .catch((error) => {
+                console.error("Błąd podczas pobierania użytkowników:", error);
+            });
+    }
 
     const handleSwitchForm = () => {
         setIsLoggingIn(!isLoggingIn);
     };
-
-    const handleLoginSubmit = async (e, navigation) => {
-        e.preventDefault();
-        const requestBody = {
-            username: email,
-            password: password
-        }
-
-        try {
-            const response = await API.get("/users");
-            const users = response.data;
-
-            const matchingUser = users.find(user => user.email === email && user.password === password);
-
-            if (matchingUser) {
-                console.log("Użytkownik o podanym e-mailu i haśle istnieje:", matchingUser);
-                navigate('/')
-            } else {
-                console.log("Użytkownik o podanym e-mailu i haśle nie istnieje.");
-            }
-        } catch (error) {
-            console.error("Błąd podczas pobierania danych użytkowników", error);
-        }
-
-        setIsLoggingIn(true);
-    }
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
@@ -63,18 +56,14 @@ const Login = () => {
             gender: gender
         }
         try {
-            const response = await API.post("/users", requestBody);
+            const response = await API.post('/users', requestBody);
+            setIsLoggingIn(true);
+            console.log('Rejestracja pomyślna!');
         } catch (error) {
-            /*if(!error?.response) {
-                setErrMsg('No server response');
-            } else if (error.response?.status === 409) {
-                setErrMsg('Email taken')
-            } else {
-                setErrMsg('Registration failed')
-            }*/
-
+            console.error('Błąd rejestracji:', error);
+            setRegistrationError('Błąd rejestracji. Spróbuj ponownie.');
         }
-    }
+    };
 
     return (
         <div className="login-container">
