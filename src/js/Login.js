@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import API from "./API";
 import {useNavigate} from 'react-router-dom';
+import bcrypt from 'bcryptjs';
 
 const Login = () => {
     const [isLoggingIn, setIsLoggingIn] = useState(true);
@@ -15,27 +16,30 @@ const Login = () => {
     const [gender, setGender] = useState("");
     const navigate = useNavigate();
 
-    const handleLoginSubmit = (e) => {
+    const handleLoginSubmit = async (e) => {
         e.preventDefault();
 
-        API.get("/users/")
-            .then((result) => {
-                result.data.map((user) => {
-                    if (user.email === email) {
-                        if (user.password === password) {
-                            sessionStorage.setItem('userId', user.id);
-                            navigate('/');
-                            console.log("przeszło");
-                        } else {
-                            console.log("Nie udane logowanie");
-                        }
+        try {
+            const result = await API.get("/users/");
+
+            for (const user of result.data) {
+                if (user.email === email) {
+                    const passwordMatch = await bcrypt.compare(password, user.password);
+
+                    if (passwordMatch) {
+                        sessionStorage.setItem('userId', user.id);
+                        navigate('/');
+                        console.log("przeszło");
+                    } else {
+                        console.log("Nieudane logowanie");
                     }
-                });
-            })
-            .catch((error) => {
-                console.error("Błąd podczas pobierania użytkowników:", error);
-            });
-    }
+                }
+            }
+        } catch (error) {
+            console.error("Błąd podczas pobierania użytkowników:", error);
+        }
+    };
+
 
     const handleSwitchForm = () => {
         setIsLoggingIn(!isLoggingIn);
@@ -47,11 +51,14 @@ const Login = () => {
             setRegistrationError("Passwords do not match");
             return;
         }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const requestBody = {
             name: name,
             surname: surname,
             email: email,
-            password: password,
+            password: hashedPassword,
             birthdayDate: birthDate,
             gender: gender
         }

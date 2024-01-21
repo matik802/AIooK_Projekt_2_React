@@ -95,6 +95,15 @@
       "password": "ala",
       "birthdayDate": "2024-01-31",
       "gender": "female"
+    },
+    {
+      "id": "2696",
+      "name": "Kasia",
+      "surname": "Papuga",
+      "email": "kasix@wp.pl",
+      "password": "$2a$10$WgOFN7XjJjIwoO9NaL7ubuFM0X/VLsRanJUsjl4lryDpO6YT1b4J.",
+      "birthdayDate": "2024-01-04",
+      "gender": "female"
     }
   ],
   "posts": [
