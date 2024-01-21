@@ -14,19 +14,22 @@ const EditProfile = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-
+    const [userId, setUserId] = useState('');
 
     const fetchData = async () => {
         try {
-            
+            const response = await API.get("/users/"+userId);
+            setUserData(response.data);
+            console.log(response.data);
         } catch (error) {
             console.error('Error while fetching data', error);
         }
     };
 
     useEffect(() => {
+        setUserId(sessionStorage.getItem('userId'));
         fetchData();
-    }, []);
+    }, [fetchData]);
 
     const setUserData = (data) => {
         setEmail(data.email);
@@ -34,21 +37,24 @@ const EditProfile = () => {
         setLastName(data.surname);
         setAbout(data.about);
         setSelectedImage(data.picture);
-        setBirthdate(data.birthDate);   
+        setBirthdate(data.birthdayDate);
         setGender(data.gender);
     };
 
     const handleSave = async () => {
         try {
+            const picturePath = selectedImage ? `images/${firstName.toLowerCase()}_${lastName.toLowerCase()}.png` : null;
+
             const requestBody = {
                 email: email,
                 about: about,
+                picture: picturePath
             };
 
-            const response = await API.put("/api/users/update", requestBody);
-
-            if (response.ok) {
+            const response = await API.patch("/users/" + userId, requestBody);
+            if (response.status === 200) {
                 setIsEditing(false);
+                fetchData();
             } else {
                 console.error('Failed to save data:', response.statusText);
             }
@@ -59,16 +65,16 @@ const EditProfile = () => {
 
     const handlePasswordChange = async () => {
         try {
-            if (newPassword != confirmPassword) {
+            if (newPassword !== confirmPassword) {
                 setErrorMessage("Passwords do not match");
             }
             const requestBody = {
                 password: password,
                 newPassword: confirmPassword
             };
-            const response = await API.put("/api/users/updatePassword", requestBody);
-            if (response.ok) {
-                window.location.reload();
+            const response = await API.patch("/users/" + userId, requestBody);
+            if (response.status === 200) {
+                setIsEditing(false);
             } else {
                 console.error('Failed to save data:', response.statusText);
             }
@@ -136,14 +142,12 @@ const EditProfile = () => {
                 />
             </form>
             <label>Profile picture:</label>
-            <label htmlFor="upload-image">
+            <label htmlFor="upload-image" className="upload-image-label">
                 {selectedImage ? (
-                    <img
-                        alt="Zdjęcie profilowe"
-                    />
+                    <img src={URL.createObjectURL(selectedImage)} alt="Zdjęcie profilowe" />
                 ) : (
-                    <div>
-                        Upload profile picture
+                    <div className="upload-image-container">
+                        Kliknij, aby wybrać zdjęcie
                     </div>
                 )}
             </label>
@@ -151,7 +155,6 @@ const EditProfile = () => {
                 type="file"
                 accept="image/*"
                 id="upload-image"
-                style={{display: 'none'}}
                 onChange={handleImageChange}
                 disabled={!isEditing}
             />
