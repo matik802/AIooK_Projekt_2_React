@@ -23,7 +23,7 @@ const Login = () => {
                 result.data.map((user) => {
                     if (user.email === email) {
                         if (user.password === password) {
-                            sessionStorage.setItem('email', email);
+                            sessionStorage.setItem('userId', user.id);
                             navigate('/');
                             console.log("przeszło");
                         } else {
@@ -59,6 +59,8 @@ const Login = () => {
             const response = await API.post('/users', requestBody);
             setIsLoggingIn(true);
             console.log('Rejestracja pomyślna!');
+            console.log(response.data.id + "idddddddd");
+
         } catch (error) {
             console.error('Błąd rejestracji:', error);
             setRegistrationError('Błąd rejestracji. Spróbuj ponownie.');

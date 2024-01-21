@@ -11,8 +11,8 @@ const Home = () => {
 
 
     useEffect(() => {
-        let email = sessionStorage.getItem('email');
-        if (email === " " || email == null) {
+        let userId = sessionStorage.getItem('userId');
+        if (userId === " " || userId == null) {
             navigate("/login");
         }
     }, []);
