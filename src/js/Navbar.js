@@ -18,7 +18,7 @@ export default function Navbar(){
             </div>
             <div className="navbar-right">
                 <Link to="/friends">Friends</Link>
-                <Link to="/editProfile">Edit profile</Link>
+                <Link to="/profile">My profile</Link>
                 <Link to="/addPost">Add post</Link>
                 <Link to="/login" onClick={handleLogout}>Log Out</Link>
             </div>

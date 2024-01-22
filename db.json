@@ -135,9 +135,10 @@
       "name": "Dawid",
       "surname": "Kobeszko",
       "email": "dawid.kob02@gmail.com",
-      "password": "$2a$10$IWyLVRHgFkU5KUmzl2Yyeu0Iira8pJFgtDsjxy3AwBDS19/sEn5G.",
+      "password": "$2a$10$J7lkdBB8TNJd7qTkA4xWwu5l6DqZbiPzPSH7myXABeti0RvcYUBri",
       "birthdayDate": "2002-04-28",
-      "gender": "male"
+      "gender": "male",
+      "picture": null
     }
   ],
   "posts": [
@@ -150,7 +151,7 @@
       "postComments": [
         1
       ],
-      "postLikeReactions": 19,
+      "postLikeReactions": 25,
       "postDislikeReactions": 18,
       "postPictures": [
         1

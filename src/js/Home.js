@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import API from "./API";
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -108,8 +108,7 @@ const Home = () => {
                         <img src={require(`../images/avatar.jpg`/*${post.postPictures}*/)} alt="logo" height={100}/>
                         <div>
                             <p className="home-post-title">{post.title}</p>
-                            <p>{findUserName(post.id_user)}</p>
-                            <button>jakies przejscie do innego użytkownika</button>
+                            <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
                         </div>
                         <div className="home-post-body">
                             <p>{post.body}</p>
