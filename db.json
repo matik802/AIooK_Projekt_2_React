@@ -115,7 +115,7 @@
       "name": "Ernest",
       "surname": "Adams",
       "email": "erni123@wp.pl",
-      "password": "$2a$10$.j3wrTfTS8hvmXUreFT.J.j7gDZcxZk/OaYXz0awGjzc1q881V4PS",
+      "password": "$2a$10$n69nf3WWklvbL92qu.ezdu3nsukDfZKWc5G.XgZrglQXYKLwBl7xC",
       "birthdayDate": "2024-01-12",
       "gender": "male",
       "about": "Opis profilu",
@@ -129,6 +129,15 @@
       "password": "$2a$10$Fe2qdp5OH.fCOwS3LN0l0uHuJr/J6JME8dSVrWJmkkaOIKvyK5DI.",
       "birthdayDate": "2024-01-31",
       "gender": "male"
+    },
+    {
+      "id": "e0ec",
+      "name": "Dawid",
+      "surname": "Kobeszko",
+      "email": "dawid.kob02@gmail.com",
+      "password": "$2a$10$IWyLVRHgFkU5KUmzl2Yyeu0Iira8pJFgtDsjxy3AwBDS19/sEn5G.",
+      "birthdayDate": "2002-04-28",
+      "gender": "male"
     }
   ],
   "posts": [
@@ -141,8 +150,8 @@
       "postComments": [
         1
       ],
-      "postLikeReactions": 7,
-      "postDislikeReactions": 11,
+      "postLikeReactions": 19,
+      "postDislikeReactions": 18,
       "postPictures": [
         1
       ],
@@ -343,15 +352,15 @@
       "tags": []
     },
     {
-      "id": "4f81",
-      "title": "tytuł",
-      "body": "kontent",
-      "dateCreated": "2024-01-21T20:31:10.015Z",
-      "id_user": 2,
+      "id": "cf4f",
+      "title": "asd",
+      "body": "sd",
+      "dateCreated": "Mon Jan 22 2024 12:47:14 GMT+0100 (czas środkowoeuropejski standardowy)",
+      "id_user": "2",
       "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "mobile-login-concept-illustration_114360-135.avif",
+      "postLikeReactions": "0",
+      "postDislikeReactio ns": "0",
+      "postPictures": "",
       "tags": []
     }
   ],
@@ -377,10 +386,6 @@
     {
       "id": "3",
       "picture": "avatar.jpg"
-    },
-    {
-      "id": "b587",
-      "picture": "mobile-login-concept-illustration_114360-135.avif"
     }
   ],
   "posts_reactions": [

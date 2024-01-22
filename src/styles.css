@@ -73,6 +73,22 @@ body{
 .home-comment-button {
     background-color: #bab9b9;
     color: #fff;
+    width: 15%;
+}
+
+.home-comment-field{
+    width: 50%;
+    height: 100px;
+    text-align: left;
+    text-wrap: normal;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.home-comment-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
 .home-save-button {
