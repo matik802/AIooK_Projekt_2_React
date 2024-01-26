@@ -85,6 +85,24 @@ const Home = () => {
         navigate("/editpost/"+postId);
     };
 
+    const handleDelete = async (e, postId) => { 
+        e.preventDefault();
+        try {
+            // Pobierz aktualny stan posta
+            const response = await API.delete(`/posts/${postId}`);
+            // const post = posts.find((post) => parseInt(post.id, 16) === parseInt(postId));
+            // let index = posts.indexOf(post);
+            // let tempPosts = posts.splice(index, 1);
+            // setPosts(tempPosts);
+            // Wyślij zaktualizowany stan z powrotem do serwera
+
+            // Przetwarzaj odpowiedź, aktualizuj stany lub inaczej obsługuj dane z serwera
+            console.log('Reaction response:', response.data);
+        } catch (error) {
+            console.error('Error while deleting post', error);
+        }
+    };
+
     return (
         <div className="home-container">
             <div className="home-search-container">
@@ -132,11 +150,16 @@ const Home = () => {
 
                                 </div>
                                 {parseInt(post.id_user) === parseInt(sessionStorage.getItem("userId")) ? 
-                                <button onClick={(e) => handleEdit(e, post.id)} className="home-comment-button">
-                                    Edit post
-                                </button> :
-                                null
-                            }
+                                    <>
+                                    <button onClick={(e) => handleEdit(e, post.id)} className="home-comment-button">
+                                        Edit post
+                                    </button>
+                                    <button onClick={(e) => handleDelete(e, post.id)} className="home-comment-button">
+                                            Delete post
+                                    </button>
+                                    </>:
+                                    null
+                                }
                                 
                             </div>
                         </div>

@@ -148,60 +148,6 @@
       "password": "$2a$10$s1tm7qFlish8tdR9AHSkPObCgKhbDlm2axBS4/kEkZ/2gm5XzYs4G",
       "birthdayDate": "2024-01-12",
       "gender": "male"
-    },
-    {
-      "id": "7f26",
-      "name": "123",
-      "surname": "213",
-      "email": "123@123.123",
-      "password": "$2a$10$Gd6DK6yJlxZ5tzmzciEoCujT3Fc/zbz028P/IdB4lx34n1zHH3Uia",
-      "birthdayDate": "2024-01-09",
-      "gender": "male"
-    },
-    {
-      "id": "f5ab",
-      "name": "123",
-      "surname": "123",
-      "email": "ewelinaC@wp.pl",
-      "password": "$2a$10$QAAQa7YuZDvqLRIpv8lCJODuXD88GeFxKujBcOOdB2Lqu7fvTee3u",
-      "birthdayDate": "2024-01-17",
-      "gender": ""
-    },
-    {
-      "id": "f210",
-      "name": "Zadaa",
-      "surname": "Zadaa",
-      "email": "12@123.123",
-      "password": "$2a$10$tSQrxquWiS.BkHF3ZRrsEeLo4jw.ixM35ZoRuvVUkXd87jssKi4WS",
-      "birthdayDate": "2024-01-06",
-      "gender": ""
-    },
-    {
-      "id": "e2bb",
-      "name": "Przemek",
-      "surname": "Zdun",
-      "email": "mail@mail.com",
-      "password": "$2a$10$6SEdOJQaAL8jPeP9.SUuLuQ/iiNCY2DyH18nNsDunlgRHQdl.Hx06",
-      "birthdayDate": "2022-10-07",
-      "gender": "male"
-    },
-    {
-      "id": "07f7",
-      "name": "Michal",
-      "surname": "Michal",
-      "email": "Email@email.email",
-      "password": "$2a$10$DY/CuEUzfBSBcwWPEX3c9uwtZx03jl/d4VPrwPWBEMylUccXUd1VK",
-      "birthdayDate": "2024-01-19",
-      "gender": "male"
-    },
-    {
-      "id": "7f8c",
-      "name": "Piotrek",
-      "surname": "Piotrek",
-      "email": "Email@email.email",
-      "password": "$2a$10$2oQScSZqGcXE5/5I1BdwxecEPL02QUX8PGNQ6UA0nKKPW71SK5fLW",
-      "birthdayDate": "2024-01-03",
-      "gender": "male"
     }
   ],
   "posts": [
@@ -496,63 +442,8 @@
       "id_user": "3055",
       "postComments": "",
       "postLikeReactions": 0,
-      "postDislikeReactions": 0,
+      "postDislikeReactions": 3,
       "postPictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-      "tags": [
-        {
-          "id": "1",
-          "name": "Food"
-        }
-      ]
-    },
-    {
-      "id": "e2b6",
-      "title": "dfsf",
-      "body": "sdfsdf",
-      "dateCreated": "2024-01-26T14:32:32.524Z",
-      "id_user": "53340",
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "sdfsdf",
-      "tags": [
-        {
-          "id": "2",
-          "name": "Sport"
-        }
-      ]
-    },
-    {
-      "id": "ec97",
-      "title": "123",
-      "body": "123",
-      "dateCreated": "2024-01-26T15:58:39.369Z",
-      "id_user": "32550",
-      "postComments": "",
-      "postLikeReactions": 3,
-      "postDislikeReactions": 2,
-      "postPictures": "123",
-      "tags": [
-        {
-          "id": "1",
-          "name": "Food"
-        },
-        {
-          "id": "2",
-          "name": "Sport"
-        }
-      ]
-    },
-    {
-      "id": "6821",
-      "title": "12",
-      "body": "12",
-      "dateCreated": "2024-01-26T17:22:41.690Z",
-      "id_user": "2039",
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "",
       "tags": [
         {
           "id": "1",
@@ -609,12 +500,12 @@
       "picture": "sdfsdf"
     },
     {
-      "id": "d105",
-      "picture": "123"
+      "id": "be49",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
     },
     {
-      "id": "27df",
-      "picture": ""
+      "id": "ccf1",
+      "picture": "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000"
     }
   ],
   "posts_reactions": [
