@@ -54,17 +54,18 @@ function AddPost() {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
+        console.log("Userid: "+sessionStorage.getItem('userId'));
         try {
             const response = await API.post("/posts", {
                 title: post.title,
                 body: post.content,
                 dateCreated: new Date(),
-                id_user: 2,
+                id_user: sessionStorage.getItem('userId'),
                 postComments: '',
                 postLikeReactions: 0,
                 postDislikeReactions: 0,
                 postPictures: fileName,
-                tags: currentTags.map(tag => tag.id),
+                tags: currentTags,
 
             });
             fetchData();
@@ -94,20 +95,7 @@ function AddPost() {
     };
 
     const handleImageUpload = (e) => {
-        const file = e.target.files[0];
-        setFileName(file.name)
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const imageDataURL = reader.result;
-                setPost((prevPost) => ({
-                    ...prevPost,
-                    image: imageDataURL,
-                }));
-            };
-            reader.readAsDataURL(file);
-            
-        }
+        setFileName(e.target.value);
     };
 
 
@@ -134,16 +122,15 @@ function AddPost() {
                             required
                         />
                         <input
-                            type="file"
+                            type="text"
                             name="image"
                             id="imageUpload"
-                            accept="image/*"
+                            placeholder="Image url"
                             onChange={(e) => handleImageUpload(e)}
-                            style={{display: 'none'}}
                         />
-                        <label htmlFor="imageUpload">
+                        {/* <label htmlFor="imageUpload">
                             Add Picture
-                        </label>
+                        </label> */}
                         {post.image && <img src={post.image} alt="Profile Picture"/>}
                         <select
                             name="tag"
@@ -157,6 +144,7 @@ function AddPost() {
                                 </option>
                             ))}
                         </select>
+                        <button onClick={(e) => addTag(e)}> Add Tag</button>
                         <ul>
                             <label>Tags:</label>
                             {currentTags?.map((tag, index) => (

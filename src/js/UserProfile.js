@@ -8,7 +8,7 @@ const User_Profile = () => {
 
     const fetchData = async (id) => {
         try {
-            const response = await API.get(`/users/${id}`);
+            const response = await API.get(`/users/${Number(id).toString(16)}`);
             setUserData(response.data);
         } catch (error) {
             console.error('Error while fetching data', error);

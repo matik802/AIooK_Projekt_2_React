@@ -9,8 +9,8 @@ const Home = () => {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
 
-
     useEffect(() => {
+        fetchData();
         let userId = sessionStorage.getItem('userId');
         if (userId === " " || userId == null) {
             navigate("/login");
@@ -44,13 +44,9 @@ const Home = () => {
     }
 
     const findUserName = (userId) => {
-        const user = users.find((user) => user.id == userId);
+        let user = users.find((user) => parseInt(user.id, 16) === parseInt(userId));
         return user ? user.name + " " + user.surname : 'Unknown User';
     };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
 
     const handleReaction = async (postId, type) => {
         try {
@@ -75,9 +71,6 @@ const Home = () => {
             console.error('Error while reacting to post', error);
         }
     };
-    const handleComment = async (postId) => {
-
-    };
 
     const filteredPosts = posts.filter(post => {
         const lowerSearch = search.toLowerCase();
@@ -87,6 +80,10 @@ const Home = () => {
             findUserName(post.id_user).toLowerCase().includes(lowerSearch)
         );
     });
+
+    const handleEdit = async (e, postId) => {
+        navigate("/editpost/"+postId);
+    };
 
     return (
         <div className="home-container">
@@ -105,7 +102,7 @@ const Home = () => {
 
                 {filteredPosts.map((post, index) => (
                     <div key={post.id} className="home-post">
-                        <img src={require(`../images/avatar.jpg`/*${post.postPictures}*/)} alt="logo" height={100}/>
+                        <img src={post.postPictures} alt="logo" height={100}/>
                         <div>
                             <p className="home-post-title">{post.title}</p>
                             <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
@@ -113,8 +110,8 @@ const Home = () => {
                         <div className="home-post-body">
                             <p>{post.body}</p>
                             <ul className="home-post-tags">
-                                {post.tags?.map((tagId, index) => {
-                                    const tag = tags.find(tag => tag.id === Number(tagId));  // Dodano konwersję na liczbę
+                            {post.tags?.map((tagId, index) => {
+                                    const tag = tags.find(tag => tag.id === Number(tagId));
                                     return tag ? <li key={index}> #{tag.name}</li> : null;
                                 })}
                             </ul>
@@ -134,15 +131,13 @@ const Home = () => {
                                     {/*<p>treść</p>*/}
 
                                 </div>
-                                <form className="home-comment-form" onSubmit={handleComment(post.id)}>
-                                   <textarea
-                                       className={"home-comment-field"}
-                                   placeholder={"Add your comment"}>
-                                   </textarea>
-                                <button type={"submit"} className="home-comment-button">
-                                    Comment
-                                </button>
-                                </form>
+                                {parseInt(post.id_user) === parseInt(sessionStorage.getItem("userId")) ? 
+                                <button onClick={(e) => handleEdit(e, post.id)} className="home-comment-button">
+                                    Edit post
+                                </button> :
+                                null
+                            }
+                                
                             </div>
                         </div>
                     </div>

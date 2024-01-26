@@ -6,6 +6,7 @@ import AddPost from "./AddPost";
 import Navbar from "./Navbar";
 import { Route, Routes } from "react-router-dom";
 import UserProfile from "./UserProfile";
+import EditPost from "./EditPost"
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/profile" element={<UserProfile />} />
                     <Route path="/addPost" element={<AddPost />} />
                     <Route path="/friends" element={<Friends />} />
+                    <Route path="/editpost/:postId" element={<EditPost />} />
                 </Routes>
             </div>
         </>

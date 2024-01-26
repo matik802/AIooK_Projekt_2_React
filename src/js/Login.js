@@ -27,7 +27,7 @@ const Login = () => {
                     const passwordMatch = await bcrypt.compare(password, user.password);
 
                     if (passwordMatch) {
-                        sessionStorage.setItem('userId', user.id);
+                        sessionStorage.setItem('userId', parseInt(user.id, 16));
                         navigate('/');
                         console.log("przeszło");
                     } else {

@@ -139,6 +139,15 @@
       "birthdayDate": "2002-04-28",
       "gender": "male",
       "picture": null
+    },
+    {
+      "id": "d05c",
+      "name": "a",
+      "surname": "a",
+      "email": "a@a.com",
+      "password": "$2a$10$s1tm7qFlish8tdR9AHSkPObCgKhbDlm2axBS4/kEkZ/2gm5XzYs4G",
+      "birthdayDate": "2024-01-12",
+      "gender": "male"
     }
   ],
   "posts": [
@@ -151,7 +160,7 @@
       "postComments": [
         1
       ],
-      "postLikeReactions": 25,
+      "postLikeReactions": 26,
       "postDislikeReactions": 18,
       "postPictures": [
         1
@@ -363,6 +372,101 @@
       "postDislikeReactio ns": "0",
       "postPictures": "",
       "tags": []
+    },
+    {
+      "id": "384d",
+      "title": "a",
+      "body": "a",
+      "dateCreated": "2024-01-26T12:36:12.582Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": [],
+      "tags": []
+    },
+    {
+      "id": "9cb9",
+      "title": "a",
+      "body": "a",
+      "dateCreated": "2024-01-26T12:51:41.130Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 2,
+      "postDislikeReactions": 2,
+      "postPictures": [],
+      "tags": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "f771",
+      "title": "a",
+      "body": "a",
+      "dateCreated": "2024-01-26T14:04:22.479Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+      "tags": [
+        {
+          "id": "1",
+          "name": "Food"
+        }
+      ]
+    },
+    {
+      "id": "4ce2",
+      "title": "a",
+      "body": "a",
+      "dateCreated": "2024-01-26T14:10:05.069Z",
+      "id_user": "3055",
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "a",
+      "tags": [
+        {
+          "id": "1",
+          "name": "Food"
+        }
+      ]
+    },
+    {
+      "id": "c3d0",
+      "title": "x",
+      "body": "x",
+      "dateCreated": "2024-01-26T14:12:44.971Z",
+      "id_user": "3055",
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+      "tags": [
+        {
+          "id": "1",
+          "name": "Food"
+        }
+      ]
+    },
+    {
+      "id": "e2b6",
+      "title": "dfsf",
+      "body": "sdfsdf",
+      "dateCreated": "2024-01-26T14:32:32.524Z",
+      "id_user": "53340",
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "sdfsdf",
+      "tags": [
+        {
+          "id": "2",
+          "name": "Sport"
+        }
+      ]
     }
   ],
   "posts_comments": [
@@ -387,6 +491,30 @@
     {
       "id": "3",
       "picture": "avatar.jpg"
+    },
+    {
+      "id": "8468",
+      "picture": []
+    },
+    {
+      "id": "c3a9",
+      "picture": []
+    },
+    {
+      "id": "c9db",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+    },
+    {
+      "id": "34e5",
+      "picture": "a"
+    },
+    {
+      "id": "db52",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+    },
+    {
+      "id": "836d",
+      "picture": "sdfsdf"
     }
   ],
   "posts_reactions": [
