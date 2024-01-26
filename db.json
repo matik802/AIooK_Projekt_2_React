@@ -147,7 +147,9 @@
       "email": "a@a.com",
       "password": "$2a$10$s1tm7qFlish8tdR9AHSkPObCgKhbDlm2axBS4/kEkZ/2gm5XzYs4G",
       "birthdayDate": "2024-01-12",
-      "gender": "male"
+      "gender": "male",
+      "picture": null,
+      "about": "ggggg123"
     }
   ],
   "posts": [
