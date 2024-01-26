@@ -20,7 +20,7 @@ const EditProfile = () => {
 
     const fetchData = async () => {
         try {
-            const response = await API.get("/users/" + userId);
+            const response = await API.get("/users/" + Number(userId).toString(16));
             setUserData(response.data);
             console.log(response.data);
         } catch (error) {

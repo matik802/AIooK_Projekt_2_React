@@ -442,29 +442,12 @@
       "id_user": "3055",
       "postComments": "",
       "postLikeReactions": 0,
-      "postDislikeReactions": 0,
+      "postDislikeReactions": 3,
       "postPictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
       "tags": [
         {
           "id": "1",
           "name": "Food"
-        }
-      ]
-    },
-    {
-      "id": "e2b6",
-      "title": "dfsf",
-      "body": "sdfsdf",
-      "dateCreated": "2024-01-26T14:32:32.524Z",
-      "id_user": "53340",
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "sdfsdf",
-      "tags": [
-        {
-          "id": "2",
-          "name": "Sport"
         }
       ]
     }
@@ -515,6 +498,14 @@
     {
       "id": "836d",
       "picture": "sdfsdf"
+    },
+    {
+      "id": "be49",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+    },
+    {
+      "id": "ccf1",
+      "picture": "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000"
     }
   ],
   "posts_reactions": [
