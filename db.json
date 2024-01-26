@@ -145,10 +145,10 @@
       "name": "a",
       "surname": "a",
       "email": "a@a.com",
-      "password": "$2a$10$s1tm7qFlish8tdR9AHSkPObCgKhbDlm2axBS4/kEkZ/2gm5XzYs4G",
+      "password": "$2a$10$MoFxRg0UvLklgNjHNhRFqO0btBpCaNQa3ESE8SVZfvlzIOYgXag4m",
       "birthdayDate": "2024-01-12",
       "gender": "male",
-      "picture": null,
+      "picture": "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000",
       "about": "ggggg123"
     }
   ],
@@ -452,6 +452,18 @@
           "name": "Food"
         }
       ]
+    },
+    {
+      "id": "a9cd",
+      "title": "asd",
+      "body": "das",
+      "dateCreated": "2024-01-26T19:10:34.268Z",
+      "id_user": "53340",
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "das",
+      "tags": []
     }
   ],
   "posts_comments": [
@@ -508,6 +520,26 @@
     {
       "id": "ccf1",
       "picture": "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000"
+    },
+    {
+      "id": "fbde",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+    },
+    {
+      "id": "13f1",
+      "picture": "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000"
+    },
+    {
+      "id": "c085",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+    },
+    {
+      "id": "d782",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+    },
+    {
+      "id": "3667",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
     }
   ],
   "posts_reactions": [

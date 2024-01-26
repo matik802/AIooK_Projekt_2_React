@@ -35,12 +35,6 @@ const Home = () => {
         } catch (error) {
             console.error('Error while fetching users data', error);
         }
-        try {
-            const response = await API.get("/tags");
-            setTags(response.data);
-        } catch (error) {
-            console.error('Error while fetching tags data', error);
-        }
     }
 
     const findUserName = (userId) => {
@@ -86,14 +80,9 @@ const Home = () => {
     };
 
     const handleDelete = async (e, postId) => { 
-        e.preventDefault();
         try {
             // Pobierz aktualny stan posta
             const response = await API.delete(`/posts/${postId}`);
-            // const post = posts.find((post) => parseInt(post.id, 16) === parseInt(postId));
-            // let index = posts.indexOf(post);
-            // let tempPosts = posts.splice(index, 1);
-            // setPosts(tempPosts);
             // Wyślij zaktualizowany stan z powrotem do serwera
 
             // Przetwarzaj odpowiedź, aktualizuj stany lub inaczej obsługuj dane z serwera
@@ -124,15 +113,7 @@ const Home = () => {
                         <div>
                             <p className="home-post-title">{post.title}</p>
                             <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
-                        </div>
-                        <div className="home-post-body">
-                            <p>{post.body}</p>
-                            <ul className="home-post-tags">
-                            {post.tags?.map((tagId, index) => {
-                                    const tag = tags.find(tag => tag.id === Number(tagId));
-                                    return tag ? <li key={index}> #{tag.name}</li> : null;
-                                })}
-                            </ul>
+                            <p className="home-post-title">{post.body}</p>
                         </div>
                         <div className="home-post-buttons">
                             <div>
@@ -144,10 +125,6 @@ const Home = () => {
                                     Dislike ({post.postDislikeReactions})
                                 </button>
                                 <div className="home-comment">
-                                    <p>Pętla po komentarzach w bazie danych trzeba zrobić i zapisywanie treści komentarza i usera do db</p>
-                                    {/*<img src=user image/>*/}
-                                    {/*<p>treść</p>*/}
-
                                 </div>
                                 {parseInt(post.id_user) === parseInt(sessionStorage.getItem("userId")) ? 
                                     <>
@@ -155,12 +132,11 @@ const Home = () => {
                                         Edit post
                                     </button>
                                     <button onClick={(e) => handleDelete(e, post.id)} className="home-comment-button">
-                                            Delete post
+                                        Delete post
                                     </button>
                                     </>:
                                     null
                                 }
-                                
                             </div>
                         </div>
                     </div>
