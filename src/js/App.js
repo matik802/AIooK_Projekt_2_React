@@ -1,4 +1,4 @@
-import Login from "./Login";
+import Login from "./Login.tsx";
 import Home from "./Home";
 import EditProfile from "./EditProfile";
 import Friends from "./Friends";

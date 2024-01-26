@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+// @ts-ignore
+import React, { useState } from 'react';
 import API from "./API";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import bcrypt from 'bcryptjs';
 
-const Login = () => {
+const Login: React.FC = () => {
     const [isLoggingIn, setIsLoggingIn] = useState(true);
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
@@ -16,7 +17,41 @@ const Login = () => {
     const [gender, setGender] = useState("");
     const navigate = useNavigate();
 
-    const handleLoginSubmit = async (e) => {
+    const validateUserData = (): boolean => {
+        if (!/^[A-Za-z]{2,15}$/.test(name)) {
+            setRegistrationError("Name should start with a capital letter and consist of 2 to 15 alphabetical characters");
+            return false;
+        }
+
+        if (!/^[A-Za-z]{3,}$/.test(surname)) {
+            setRegistrationError("Surname should start with a capital letter and consist of at least 3 alphabetical characters");
+            return false;
+        }
+
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+            setRegistrationError("Invalid email format");
+            return false;
+        }
+
+        if (!/^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/.test(birthDate)) {
+            setRegistrationError("Invalid date format (YYYY-MM-DD)");
+            return false;
+        }
+
+        if (password.length < 6 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            setRegistrationError("Password should be at least 6 characters long and contain at least one special character");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            setRegistrationError("Passwords do not match");
+            return false;
+        }
+
+        return true;
+    };
+
+    const handleLoginSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
@@ -27,7 +62,7 @@ const Login = () => {
                     const passwordMatch = await bcrypt.compare(password, user.password);
 
                     if (passwordMatch) {
-                        sessionStorage.setItem('userId', parseInt(user.id, 16));
+                        sessionStorage.setItem('userId', String(parseInt(user.id, 16)));
                         navigate('/');
                         console.log("przeszło");
                     } else {
@@ -40,15 +75,13 @@ const Login = () => {
         }
     };
 
-
     const handleSwitchForm = () => {
         setIsLoggingIn(!isLoggingIn);
     };
 
-    const handleRegisterSubmit = async (e) => {
+    const handleRegisterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            setRegistrationError("Passwords do not match");
+        if (!validateUserData()) {
             return;
         }
 
@@ -61,7 +94,8 @@ const Login = () => {
             password: hashedPassword,
             birthdayDate: birthDate,
             gender: gender
-        }
+        };
+
         try {
             const response = await API.post('/users', requestBody);
             setIsLoggingIn(true);
