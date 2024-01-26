@@ -17,6 +17,7 @@ const EditProfile = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [userId, setUserId] = useState('');
     const [currentPassword, setCurrentPassword] = useState('');
+    const [counter, setCounter] = useState('');
 
     const fetchData = async () => {
         try {
@@ -31,7 +32,8 @@ const EditProfile = () => {
     useEffect(() => {
         setUserId(sessionStorage.getItem('userId'));
         fetchData();
-    }, [fetchData]);
+        setCounter(1);
+    }, [counter]);
 
     const setUserData = (data) => {
         setEmail(data.email);
@@ -46,23 +48,16 @@ const EditProfile = () => {
 
     const handleSave = async () => {
         try {
-            const picturePath = selectedImage ? `images/${firstName.toLowerCase()}_${lastName.toLowerCase()}.png` : null;
-
-            const requestBody = {
+            const response = await API.patch("/users/" + Number(userId).toString(16), {
                 email: email,
                 about: about,
-                picture: picturePath
-            };
-
-            const response = await API.patch("/users/" + userId, requestBody);
+                picture: selectedImage
+            });
             if (response.status === 200) {
                 setIsEditing(false);
-                fetchData();
-            } else {
-                console.error('Failed to save data:', response.statusText);
             }
         } catch (error) {
-            console.error('Error while saving data:', error);
+            console.error('Error while editing user', error);
         }
     };
 
@@ -83,7 +78,7 @@ const EditProfile = () => {
                 password: await bcrypt.hash(newPassword, 10),
             };
 
-            const response = await API.patch("/users/" + userId, requestBody);
+            const response = await API.patch("/users/" + Number(userId).toString(16), requestBody);
             if (response.status === 200) {
                 setIsEditing(false);
             } else {
@@ -92,11 +87,6 @@ const EditProfile = () => {
         } catch (error) {
             console.error('Error while saving data:', error);
         }
-    };
-
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        setSelectedImage(file);
     };
 
     const startEditing = () => {
@@ -151,24 +141,21 @@ const EditProfile = () => {
                     onChange={(e) => setAbout(e.target.value)}
                     disabled={!isEditing}
                 />
+
+                <label>Profile picture:</label>
+                <input
+                    type="text"
+                    name="image"
+                    id="imageUpload"
+                    placeholder="Image url"
+                    disabled={!isEditing}
+                    value={selectedImage}
+                    onChange={(e) => setSelectedImage(e.target.value)}
+                />
+                {selectedImage && <img src={selectedImage} alt="Profile Picture"/>}
+                <br/>
+
             </form>
-            <label>Profile picture:</label>
-            <label htmlFor="upload-image" className="upload-image-label">
-                {selectedImage ? (
-                    <img src={URL.createObjectURL(selectedImage)} alt="Zdjęcie profilowe"/>
-                ) : (
-                    <div className="upload-image-container">
-                        Kliknij, aby wybrać zdjęcie
-                    </div>
-                )}
-            </label>
-            <input
-                type="file"
-                accept="image/*"
-                id="upload-image"
-                onChange={handleImageChange}
-                disabled={!isEditing}
-            />
             <form>
                 <label>Password:</label>
                 <input

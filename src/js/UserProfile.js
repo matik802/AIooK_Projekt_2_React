@@ -66,11 +66,12 @@ const User_Profile = () => {
             )}
             <div>
                 <label className="user-profile-label">Profile picture:</label>
+            </div>
+            <div>
                 {userData && (
-                    <img className="user-profile-img" src={userData.picture} alt="Profile"/>
+                        <img className="user-profile-img" src={userData.picture} alt="Profile"/>
                 )}
             </div>
-
             {!userId && (
                 <div>
                     <Link to="/editProfile">
