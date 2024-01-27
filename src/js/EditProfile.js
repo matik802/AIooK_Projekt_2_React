@@ -14,7 +14,8 @@ const EditProfile = () => {
     const [password, setPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessageUserData, setErrorMessageUserData] = useState('');
+    const [errorMessagePassword, setErrorMessagePassword] = useState('');
     const [userId, setUserId] = useState('');
     const [currentPassword, setCurrentPassword] = useState('');
     const [counter, setCounter] = useState('');
@@ -48,23 +49,24 @@ const EditProfile = () => {
 
     const validateUserData = () => {
         if (!/^\S+@\S+\.\S+$/.test(email)) {
-            setErrorMessage("Invalid email format");
+            setErrorMessageUserData("Invalid email format");
             return false;
         }
 
         if (!/(https?:\/\/.*\.(?:png|jpg))/i.test(selectedImage) && selectedImage.length > 0) { 
-            setErrorMessage("Wrong image adress");
+            setErrorMessageUserData("Wrong image adress");
             return false;
         }
 
         return true;
     };
 
-    const handleSave = async () => {
+    const handleSave = async (e) => {
+        e.preventDefault();
 
         if (!validateUserData()) return;
 
-        setErrorMessage('');
+        setErrorMessageUserData('');
 
         try {
             const response = await API.patch("/users/" + Number(userId).toString(16), {
@@ -83,17 +85,17 @@ const EditProfile = () => {
     const handlePasswordChange = async () => {
         try {
             if (newPassword !== confirmPassword) {
-                setErrorMessage("Passwords do not match");
+                setErrorMessagePassword("Passwords do not match");
                 return;
             }
             const isCurrentPasswordValid = await bcrypt.compare(password, currentPassword);
 
             if(!isCurrentPasswordValid){
-                setErrorMessage("Current password is incorrect");
+                setErrorMessagePassword("Current password is incorrect");
                 return;
             }
 
-            setErrorMessage('');
+            setErrorMessagePassword('');
 
             const requestBody = {
                 password: await bcrypt.hash(newPassword, 10),
@@ -174,8 +176,11 @@ const EditProfile = () => {
                     onChange={(e) => setSelectedImage(e.target.value)}
                 />
                 {selectedImage && <img src={selectedImage} alt={"Profile picture " + email}/>}
-                <br/>
-
+                <span>{errorMessageUserData}</span>
+                <button className="edit-profile-save-button" disabled={!isEditing} onClick={(e) => handleSave(e)}>
+                    Save
+                </button>
+                <br></br>
             </form>
             <form>
                 <label>Password:</label>
@@ -203,13 +208,10 @@ const EditProfile = () => {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     disabled={!isEditing}
                 />
-                <span>{errorMessage}</span>
+                <span>{errorMessagePassword}</span>
             </form>
             <button disabled={!isEditing} onClick={handlePasswordChange}>
-                Zmień hasło
-            </button>
-            <button disabled={!isEditing} onClick={handleSave}>
-                Save
+                Change password
             </button>
             <button disabled={!isEditing} onClick={() => setIsEditing(false)}>
                 Cancel

@@ -386,6 +386,10 @@ body{
     display: none;
 }
 
+.edit-profile-save-button {
+    max-width: 70px;
+}
+
 /* AddPost*/
 
 .add-post-container {
