@@ -150,6 +150,16 @@
       "gender": "male",
       "picture": "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000",
       "about": "ggggg123"
+    },
+    {
+      "id": "49df",
+      "name": "Janusz",
+      "surname": "Kowalski",
+      "email": "a@a.com",
+      "password": "$2a$10$v3NDetRxYddOZE7H2njTOOWeCbWz5csOLDqrI/GYZac67ytBpZn02",
+      "birthdayDate": "2024-01-05",
+      "gender": "male",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Roman_Gancarczyk_%2839963888450%29_%28cropped%29.jpg/167px-Roman_Gancarczyk_%2839963888450%29_%28cropped%29.jpg"
     }
   ],
   "posts": [
@@ -164,9 +174,7 @@
       ],
       "postLikeReactions": 26,
       "postDislikeReactions": 18,
-      "postPictures": [
-        1
-      ],
+      "postPictures": "",
       "tags": [
         1
       ]
@@ -180,7 +188,7 @@
       "postComments": [],
       "postLikeReactions": 1,
       "postDislikeReactions": 1,
-      "postPictures": [],
+      "postPictures": "",
       "tags": [
         1,
         2
@@ -195,274 +203,55 @@
       "postComments": [],
       "postLikeReactions": 3,
       "postDislikeReactions": 3,
-      "postPictures": [],
-      "tags": []
-    },
-    {
-      "id": "4",
-      "title": "studia",
-      "body": "Projekty do oddania",
-      "dateCreated": "2024-01-20T17:42:32.572Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "5",
-      "title": "aaa",
-      "body": "aaa",
-      "dateCreated": "2024-01-20T17:44:44.700Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 17,
-      "postDislikeReactions": 8,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "6",
-      "title": "asd1",
-      "body": "asd1",
-      "dateCreated": "2024-01-20T18:05:02.226Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "7",
-      "title": "asd1",
-      "body": "asd1",
-      "dateCreated": "2024-01-20T18:05:39.197Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "8",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:07:05.002Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "9",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:08:40.101Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "10",
-      "title": "aa",
-      "body": "aaa",
-      "dateCreated": "2024-01-20T18:10:31.000Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "tags": []
-    },
-    {
-      "id": "11",
-      "title": "a",
-      "body": "a",
-      "dateCreated": "2024-01-20T18:14:09.985Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "tags": []
-    },
-    {
-      "id": "12",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:15:43.529Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "tags": []
-    },
-    {
-      "id": "13",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:20:32.429Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
       "postPictures": "",
       "tags": []
     },
     {
-      "id": "14",
-      "title": "aa",
-      "body": "aaa",
-      "dateCreated": "2024-01-20T18:22:55.734Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "15",
-      "title": "aaa",
-      "body": "aaaaa",
-      "dateCreated": "2024-01-20T18:29:17.299Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "16",
-      "title": "aaa",
-      "body": "aaaaa",
-      "dateCreated": "2024-01-20T18:29:37.439Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "17",
-      "title": "asdsa",
-      "body": "asdasd",
-      "dateCreated": "2024-01-20T18:30:08.296Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "cf4f",
-      "title": "asd",
-      "body": "sd",
-      "dateCreated": "Mon Jan 22 2024 12:47:14 GMT+0100 (czas środkowoeuropejski standardowy)",
-      "id_user": "2",
-      "postComments": "",
-      "postLikeReactions": "0",
-      "postDislikeReactio ns": "0",
-      "postPictures": "",
-      "tags": []
-    },
-    {
-      "id": "384d",
+      "id": "397d",
       "title": "a",
       "body": "a",
-      "dateCreated": "2024-01-26T12:36:12.582Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": [],
-      "tags": []
-    },
-    {
-      "id": "9cb9",
-      "title": "a",
-      "body": "a",
-      "dateCreated": "2024-01-26T12:51:41.130Z",
-      "id_user": 2,
+      "dateCreated": "2024-01-27T17:53:30.940Z",
+      "id_user": "18911",
       "postComments": "",
       "postLikeReactions": 2,
-      "postDislikeReactions": 2,
+      "postDislikeReactions": 1,
+      "postPictures": "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000",
+      "tags": []
+    },
+    {
+      "id": "0b22",
+      "title": "A",
+      "body": "AAA",
+      "dateCreated": "2024-01-27T18:49:42.846Z",
+      "id_user": "18911",
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
       "postPictures": [],
-      "tags": [
-        "1",
-        "2"
-      ]
+      "tags": []
     },
     {
-      "id": "f771",
-      "title": "a",
+      "id": "a663",
+      "title": "Sa",
       "body": "a",
-      "dateCreated": "2024-01-26T14:04:22.479Z",
-      "id_user": 2,
+      "dateCreated": "2024-01-27T18:42:21.009Z",
+      "id_user": "18911",
       "postComments": "",
       "postLikeReactions": 0,
       "postDislikeReactions": 0,
-      "postPictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-      "tags": [
-        {
-          "id": "1",
-          "name": "Food"
-        }
-      ]
+      "postPictures": [],
+      "tags": []
     },
     {
-      "id": "4ce2",
-      "title": "a",
-      "body": "a",
-      "dateCreated": "2024-01-26T14:10:05.069Z",
-      "id_user": "3055",
+      "id": "0ec5",
+      "title": "Aaaaaaaaaaaaaaaa",
+      "body": "Adfffd",
+      "dateCreated": "2024-01-27T18:45:06.622Z",
+      "id_user": "18911",
       "postComments": "",
       "postLikeReactions": 0,
       "postDislikeReactions": 0,
-      "postPictures": "a",
-      "tags": [
-        {
-          "id": "1",
-          "name": "Food"
-        }
-      ]
-    },
-    {
-      "id": "c3d0",
-      "title": "x",
-      "body": "x",
-      "dateCreated": "2024-01-26T14:12:44.971Z",
-      "id_user": "3055",
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 3,
-      "postPictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-      "tags": [
-        {
-          "id": "1",
-          "name": "Food"
-        }
-      ]
-    },
-    {
-      "id": "a9cd",
-      "title": "asd",
-      "body": "das",
-      "dateCreated": "2024-01-26T19:10:34.268Z",
-      "id_user": "53340",
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "das",
+      "postPictures": [],
       "tags": []
     }
   ],

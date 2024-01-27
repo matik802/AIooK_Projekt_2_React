@@ -7,7 +7,8 @@ function AddPost() {
     const [showPostForm, setShowPostForm] = useState(false);
     const [currentTags, setCurrentTags] = useState([]);
     const [rawTags, setRawTags] = useState([]);
-    const [fileName, setFileName] = useState([])
+    const [fileName, setFileName] = useState([]);
+    const [postValidationMsg, setPostValidationMsg] = useState('');
     const [post, setPost] = useState({
         title: '',
         content: '',
@@ -40,7 +41,21 @@ function AddPost() {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        console.log("Userid: "+sessionStorage.getItem('userId'));
+        if (!/(https?:\/\/.*\.(?:png|jpg))/i.test(fileName) && fileName.length > 0) { 
+            setPostValidationMsg("Wrong image adress");
+            return;
+        }
+
+        if (!/^[A-Z][A-Za-z0-9_-]*$/.test(post.title)) {
+            setPostValidationMsg("Post title should start with capital letter");
+            return;
+        }
+
+        if (!/^[A-Z][A-Za-z0-9_-]*$/.test(post.content)) {
+            setPostValidationMsg("Post content should start with capital letter");
+            return;
+        }
+
         try {
             const response = await API.post("/posts", {
                 title: post.title,
@@ -90,12 +105,12 @@ function AddPost() {
                             type="text"
                             name="image"
                             id="imageUpload"
-                            placeholder="Image url"
+                            placeholder="Copy & paste image link here"
                             value={fileName}
                             onChange={(e) => handleImageUpload(e)}
                         />
                         {fileName && <img src={fileName} alt="Picture"/>}
-            
+                        <span style={{color: 'red'}}>{postValidationMsg}</span>
                         <button type="submit"> Add Post</button>
                     </form>
                 </div>

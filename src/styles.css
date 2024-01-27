@@ -28,7 +28,8 @@ body{
 .home-post-author{
     font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: gray;
+    font-size: small;
 }
 
 .home-post-title {
@@ -39,6 +40,7 @@ body{
 .home-post-body {
     margin-top: 10px;
     margin-bottom: 15px;
+    font-size: small;
 }
 
 .home-post-tags {

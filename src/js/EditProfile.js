@@ -147,7 +147,7 @@ const EditProfile = () => {
                     type="text"
                     name="image"
                     id="imageUpload"
-                    placeholder="Image url"
+                    placeholder="Copy & paste image link here"
                     disabled={!isEditing}
                     value={selectedImage}
                     onChange={(e) => setSelectedImage(e.target.value)}

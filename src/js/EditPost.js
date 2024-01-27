@@ -9,6 +9,7 @@ function AddPost() {
     const {postId} = useParams();
     const [rawTags, setRawTags] = useState([]);
     const [fileName, setFileName] = useState([])
+    const [postValidationMsg, setPostValidationMsg] = useState('');
     const [post, setPost] = useState({
         title: '',
         content: '',
@@ -45,6 +46,21 @@ function AddPost() {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+
+        if (!/(https?:\/\/.*\.(?:png|jpg))/i.test(fileName) && fileName.length > 0) { 
+            setPostValidationMsg("Wrong image adress");
+            return;
+        }
+
+        if (!/^[A-Z][A-Za-z0-9_-]*$/.test(post.title)) {
+            setPostValidationMsg("Post title should start with capital letter");
+            return;
+        }
+
+        if (!/^[A-Z][A-Za-z0-9_-]*$/.test(post.content)) {
+            setPostValidationMsg("Post content should start with capital letter");
+            return;
+        }
 
         try {
             const response = await API.patch("/posts/" + postId, {
@@ -86,7 +102,7 @@ function AddPost() {
     return (
         <div className="add-post-container">
                 <div>
-                    <h3>Add Post</h3>
+                    <h3>Edit Post</h3>
                     <form onSubmit={handleFormSubmit}>
                         <input
                             type="text"
@@ -110,11 +126,11 @@ function AddPost() {
                             name="image"
                             id="imageUpload"
                             value={post.image}
-                            placeholder="Image url"
+                            placeholder="Copy & paste image link here"
                             onChange={(e) => handleImageUpload(e)}
                         />
                         {post.image && <img src={post.image} alt="Picture"/>}
-
+                        <span style={{color: 'red'}}>{postValidationMsg}</span>
                         <button type="submit"> Edit Post</button>
                     </form>
                 </div>

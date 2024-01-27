@@ -93,7 +93,8 @@ const Login: React.FC = () => {
             email: email,
             password: hashedPassword,
             birthdayDate: birthDate,
-            gender: gender
+            gender: gender,
+            picture: ""
         };
 
         try {

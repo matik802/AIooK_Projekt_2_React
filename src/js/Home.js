@@ -42,6 +42,11 @@ const Home = () => {
         return user ? user.name + " " + user.surname : 'Unknown User';
     };
 
+    // const findUserImage = (userId) => {
+    //     let user = users.find((user) => parseInt(user.id, 16) === parseInt(userId));
+    //     return user.picture !=="" ? user.picture : null;
+    // }
+
     const handleReaction = async (postId, type) => {
         try {
             // Pobierz aktualny stan posta
@@ -109,11 +114,12 @@ const Home = () => {
 
                 {filteredPosts.map((post, index) => (
                     <div key={post.id} className="home-post">
-                        <img src={post.postPictures} alt="logo" height={100}/>
+                        <p className="home-post-title">{post.title}</p>
+                        {/* {findUserImage(post.id_user) !== null ? <img src={findUserImage(post.id_user)} height={100}/> : null} */}
+                        <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
+                        {post.postPictures !== null ? <img src={post.postPictures} height={400}/> : null}
                         <div>
-                            <p className="home-post-title">{post.title}</p>
-                            <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
-                            <p className="home-post-title">{post.body}</p>
+                            <p className="home-post-body">{post.body}</p>
                         </div>
                         <div className="home-post-buttons">
                             <div>
@@ -126,6 +132,7 @@ const Home = () => {
                                 </button>
                                 <div className="home-comment">
                                 </div>
+                                <br></br>
                                 {parseInt(post.id_user) === parseInt(sessionStorage.getItem("userId")) ? 
                                     <>
                                     <button onClick={(e) => handleEdit(e, post.id)} className="home-comment-button">
