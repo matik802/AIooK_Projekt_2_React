@@ -7,7 +7,7 @@ function AddPost() {
     const [showPostForm, setShowPostForm] = useState(false);
     const [currentTags, setCurrentTags] = useState([]);
     const [rawTags, setRawTags] = useState([]);
-    const [fileName, setFileName] = useState([]);
+    const [fileName, setFileName] = useState("");
     const [postValidationMsg, setPostValidationMsg] = useState('');
     const [post, setPost] = useState({
         title: '',
@@ -54,6 +54,10 @@ function AddPost() {
         if (!/^[A-Z][A-Za-z0-9_-]*$/.test(post.content)) {
             setPostValidationMsg("Post content should start with capital letter");
             return;
+        }
+
+        if (fileName.length === 0) {
+            setFileName("");
         }
 
         try {

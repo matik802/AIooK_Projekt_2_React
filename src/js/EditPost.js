@@ -62,6 +62,10 @@ function AddPost() {
             return;
         }
 
+        if (post.image.length === 0) {
+            setFileName("");
+        }
+
         try {
             const response = await API.patch("/posts/" + postId, {
                 title: post.title,

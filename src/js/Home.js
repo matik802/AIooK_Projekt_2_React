@@ -117,7 +117,7 @@ const Home = () => {
                         <h2 className="home-post-title">{post.title}</h2>
                         {/* {findUserImage(post.id_user) !== null ? <img src={findUserImage(post.id_user)} height={100}/> : null} */}
                         <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
-                        {post.postPictures !== null ? <img src={post.postPictures} alt = {"Image for the post " + post.title} height={400}/> : null}
+                        {post.postPictures !== "" ? <img src={post.postPictures} alt = {"Image for the post " + post.title} height={400}/> : null}
                         <div>
                             <p className="home-post-body">{post.body}</p>
                         </div>
