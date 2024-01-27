@@ -109,7 +109,7 @@ function AddPost() {
                             value={fileName}
                             onChange={(e) => handleImageUpload(e)}
                         />
-                        {fileName && <img src={fileName} alt="Picture"/>}
+                        {fileName && <img src={fileName} alt="My post image"/>}
                         <span style={{color: 'red'}}>{postValidationMsg}</span>
                         <button type="submit"> Add Post</button>
                     </form>

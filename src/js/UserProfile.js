@@ -69,7 +69,7 @@ const User_Profile = () => {
             </div>
             <div>
                 {userData && (
-                        <img className="user-profile-img" src={userData.picture} alt="Profile"/>
+                        <img className="user-profile-img" src={userData.picture} alt={"Profile picture " + userData.email}/>
                 )}
             </div>
             {!userId && (

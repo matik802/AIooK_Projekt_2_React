@@ -114,10 +114,10 @@ const Home = () => {
 
                 {filteredPosts.map((post, index) => (
                     <div key={post.id} className="home-post">
-                        <p className="home-post-title">{post.title}</p>
+                        <h2 className="home-post-title">{post.title}</h2>
                         {/* {findUserImage(post.id_user) !== null ? <img src={findUserImage(post.id_user)} height={100}/> : null} */}
                         <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
-                        {post.postPictures !== null ? <img src={post.postPictures} height={400}/> : null}
+                        {post.postPictures !== null ? <img src={post.postPictures} alt = {"Image for the post " + post.title} height={400}/> : null}
                         <div>
                             <p className="home-post-body">{post.body}</p>
                         </div>
@@ -135,10 +135,10 @@ const Home = () => {
                                 <br></br>
                                 {parseInt(post.id_user) === parseInt(sessionStorage.getItem("userId")) ? 
                                     <>
-                                    <button onClick={(e) => handleEdit(e, post.id)} className="home-comment-button">
+                                    <button onClick={(e) => handleEdit(e, post.id)} className="home-edit-button">
                                         Edit post
                                     </button>
-                                    <button onClick={(e) => handleDelete(e, post.id)} className="home-comment-button">
+                                    <button onClick={(e) => handleDelete(e, post.id)} className="home-delete-button">
                                         Delete post
                                     </button>
                                     </>:

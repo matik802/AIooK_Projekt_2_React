@@ -129,7 +129,7 @@ function AddPost() {
                             placeholder="Copy & paste image link here"
                             onChange={(e) => handleImageUpload(e)}
                         />
-                        {post.image && <img src={post.image} alt="Picture"/>}
+                        {post.image && <img src={post.image} alt = "My post image"/>}
                         <span style={{color: 'red'}}>{postValidationMsg}</span>
                         <button type="submit"> Edit Post</button>
                     </form>

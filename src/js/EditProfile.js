@@ -46,7 +46,26 @@ const EditProfile = () => {
         setCurrentPassword(data.password);
     };
 
+    const validateUserData = () => {
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+            setErrorMessage("Invalid email format");
+            return false;
+        }
+
+        if (!/(https?:\/\/.*\.(?:png|jpg))/i.test(selectedImage) && selectedImage.length > 0) { 
+            setErrorMessage("Wrong image adress");
+            return false;
+        }
+
+        return true;
+    };
+
     const handleSave = async () => {
+
+        if (!validateUserData()) return;
+
+        setErrorMessage('');
+
         try {
             const response = await API.patch("/users/" + Number(userId).toString(16), {
                 email: email,
@@ -73,6 +92,8 @@ const EditProfile = () => {
                 setErrorMessage("Current password is incorrect");
                 return;
             }
+
+            setErrorMessage('');
 
             const requestBody = {
                 password: await bcrypt.hash(newPassword, 10),
@@ -152,7 +173,7 @@ const EditProfile = () => {
                     value={selectedImage}
                     onChange={(e) => setSelectedImage(e.target.value)}
                 />
-                {selectedImage && <img src={selectedImage} alt="Profile Picture"/>}
+                {selectedImage && <img src={selectedImage} alt={"Profile picture " + email}/>}
                 <br/>
 
             </form>
