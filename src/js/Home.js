@@ -5,9 +5,7 @@ import {Link, useNavigate} from 'react-router-dom';
 const Home = () => {
     const [posts, setPosts] = useState([]);
     const [users, setUsers] = useState([]);
-    const [tags, setTags] = useState([]);
     const [search, setSearch] = useState('');
-    const [counter, setCounter] = useState(0);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -42,11 +40,6 @@ const Home = () => {
         let user = users.find((user) => parseInt(user.id, 16) === parseInt(userId));
         return user ? user.name + " " + user.surname : 'Unknown User';
     };
-
-    // const findUserImage = (userId) => {
-    //     let user = users.find((user) => parseInt(user.id, 16) === parseInt(userId));
-    //     return user.picture !=="" ? user.picture : null;
-    // }
 
     const handleReaction = async (postId, type) => {
         try {
@@ -116,7 +109,6 @@ const Home = () => {
                 {filteredPosts.map((post, index) => (
                     <div key={post.id} className="home-post">
                         <h2 className="home-post-title">{post.title}</h2>
-                        {/* {findUserImage(post.id_user) !== null ? <img src={findUserImage(post.id_user)} height={100}/> : null} */}
                         <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
                         {post.postPictures !== "" ? <img src={post.postPictures} alt = {"Image for the post " + post.title} height={400}/> : null}
                         <div className="home-div-post-body">
