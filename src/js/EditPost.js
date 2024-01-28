@@ -52,12 +52,12 @@ function AddPost() {
             return;
         }
 
-        if (!/^[A-Z][A-Za-z0-9_-]*$/.test(post.title)) {
+        if (!/^[A-Z].*$/.test(post.title)) {
             setPostValidationMsg("Post title should start with capital letter");
             return;
         }
 
-        if (!/^[A-Z][A-Za-z0-9_-]*$/.test(post.content)) {
+        if (!/^[A-Z].*$/.test(post.content)) {
             setPostValidationMsg("Post content should start with capital letter");
             return;
         }

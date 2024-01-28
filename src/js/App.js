@@ -1,7 +1,6 @@
 import Login from "./Login.tsx";
 import Home from "./Home";
 import EditProfile from "./EditProfile";
-import Friends from "./Friends";
 import AddPost from "./AddPost";
 import Navbar from "./Navbar";
 import { Route, Routes } from "react-router-dom";
@@ -20,8 +19,7 @@ function App() {
                     <Route path="/profile/:userId" element={<UserProfile />} />
                     <Route path="/profile" element={<UserProfile />} />
                     <Route path="/addPost" element={<AddPost />} />
-                    <Route path="/friends" element={<Friends />} />
-                    <Route path="/editpost/:postId" element={<EditPost />} />
+                    <Route path="/editPost/:postId" element={<EditPost />} />
                 </Routes>
             </div>
         </>

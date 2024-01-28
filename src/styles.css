@@ -24,6 +24,7 @@ body{
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-break: break-word;
 }
 
 .home-post-author{
@@ -80,13 +81,13 @@ body{
 }
 
 .home-edit-button {
-    background-color: #2c2c2c;
+    background-color: #7a7013;
     color: #fff;
     width: 15%;
 }
 
 .home-delete-button {
-    background-color: #350000;
+    background-color: #a05b00;
     color: #fff;
     width: 15%;
 }
@@ -177,6 +178,7 @@ body{
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    text-align: center;
 }
 
 .login-form {

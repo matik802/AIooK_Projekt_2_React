@@ -7,6 +7,7 @@ const Home = () => {
     const [users, setUsers] = useState([]);
     const [tags, setTags] = useState([]);
     const [search, setSearch] = useState('');
+    const [counter, setCounter] = useState(0);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -86,11 +87,11 @@ const Home = () => {
 
     const handleDelete = async (e, postId) => { 
         try {
-            // Pobierz aktualny stan posta
             const response = await API.delete(`/posts/${postId}`);
-            // Wyślij zaktualizowany stan z powrotem do serwera
 
-            // Przetwarzaj odpowiedź, aktualizuj stany lub inaczej obsługuj dane z serwera
+            let tempPosts = posts.filter(post => post.id !== postId);
+            setPosts(tempPosts);
+
             console.log('Reaction response:', response.data);
         } catch (error) {
             console.error('Error while deleting post', error);
@@ -118,7 +119,7 @@ const Home = () => {
                         {/* {findUserImage(post.id_user) !== null ? <img src={findUserImage(post.id_user)} height={100}/> : null} */}
                         <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
                         {post.postPictures !== "" ? <img src={post.postPictures} alt = {"Image for the post " + post.title} height={400}/> : null}
-                        <div>
+                        <div className="home-div-post-body">
                             <p className="home-post-body">{post.body}</p>
                         </div>
                         <div className="home-post-buttons">

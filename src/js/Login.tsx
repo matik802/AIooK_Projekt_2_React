@@ -111,7 +111,7 @@ const Login: React.FC = () => {
 
     return (
         <div className="login-container">
-            <h1>App Name/Logo</h1>
+            <h1>Great React App</h1>
             <div>
                 {isLoggingIn ? (
                     <div>
